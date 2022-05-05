@@ -27,5 +27,10 @@ namespace Schedule
         {
             lbData.Text = str;
         }
+
+        private void lbData_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

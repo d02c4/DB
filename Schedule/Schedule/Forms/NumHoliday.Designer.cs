@@ -1,6 +1,6 @@
-﻿namespace Schedule
+﻿namespace Schedule.Forms
 {
-    partial class UserNotControlPauseBetweenExams
+    partial class NumHoliday
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,36 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbdays = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lbdays
+            // label4
             // 
-            this.lbdays.AutoSize = true;
-            this.lbdays.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbdays.Location = new System.Drawing.Point(12, 10);
-            this.lbdays.Name = "lbdays";
-            this.lbdays.Size = new System.Drawing.Size(34, 24);
-            this.lbdays.TabIndex = 2;
-            this.lbdays.Text = "00";
+            this.label4.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.label4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(-3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 50);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "№";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // UserNotControlPauseBetweenExams
+            // NumHoliday
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Controls.Add(this.lbdays);
-            this.Name = "UserNotControlPauseBetweenExams";
-            this.Size = new System.Drawing.Size(157, 100);
-            this.Load += new System.EventHandler(this.UserNotControlPauseBetweenExams_Load);
-            this.Click += new System.EventHandler(this.UserNotControlPauseBetweenExams_Click);
+            this.Controls.Add(this.label4);
+            this.Name = "NumHoliday";
+            this.Size = new System.Drawing.Size(150, 50);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lbdays;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -17,7 +17,9 @@ namespace Schedule.Windows
         bool create = true;
         DateTime timeValue = new DateTime();
 
-        public AddTimeWindow(int timeId)
+        AdminPanel adminPanel = null;
+
+        public AddTimeWindow(int timeId, AdminPanel adminPanel)
         {
             this.timeId = timeId;
             InitializeComponent();
@@ -49,7 +51,16 @@ namespace Schedule.Windows
                 command.Parameters.Add("@I", MySqlDbType.Int32).Value = timeId;
                 command.ExecuteNonQuery();
                 dataBase.CloseConnection();
-                MessageBox.Show("Специализация успешно изменена!");
+
+                this.Hide();
+                var res = MessageBox.Show("Время успешно изменено!");
+                if (res == DialogResult.OK)
+                {
+                    adminPanel.UpdateTable();
+                    this.Close();
+                }
+
+                
             }
             else
             {
@@ -62,7 +73,13 @@ namespace Schedule.Windows
                 command.ExecuteNonQuery();
                 dataBase.CloseConnection();
 
-                MessageBox.Show("Время успешно добавлено!");
+                this.Hide();
+                var res = MessageBox.Show("Время успешно добавлено!");
+                if (res == DialogResult.OK)
+                {
+                    adminPanel.UpdateTable();
+                    this.Close();
+                }   
             }
         }
 

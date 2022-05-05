@@ -39,15 +39,16 @@
             // 
             this.textBoxSubjectName.Location = new System.Drawing.Point(10, 41);
             this.textBoxSubjectName.Name = "textBoxSubjectName";
-            this.textBoxSubjectName.Size = new System.Drawing.Size(199, 22);
+            this.textBoxSubjectName.Size = new System.Drawing.Size(215, 22);
             this.textBoxSubjectName.TabIndex = 8;
             this.textBoxSubjectName.TextChanged += new System.EventHandler(this.textBoxSubjectName_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 125);
+            this.button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(61, 125);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 23);
+            this.button1.Size = new System.Drawing.Size(119, 37);
             this.button1.TabIndex = 7;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
@@ -68,7 +69,7 @@
             // 
             this.textBoxSubjectPause.Location = new System.Drawing.Point(10, 97);
             this.textBoxSubjectPause.Name = "textBoxSubjectPause";
-            this.textBoxSubjectPause.Size = new System.Drawing.Size(199, 22);
+            this.textBoxSubjectPause.Size = new System.Drawing.Size(215, 22);
             this.textBoxSubjectPause.TabIndex = 8;
             this.textBoxSubjectPause.TextChanged += new System.EventHandler(this.textBoxSubjectPause_TextChanged);
             // 
@@ -87,14 +88,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(243, 159);
+            this.ClientSize = new System.Drawing.Size(252, 167);
+            this.ControlBox = false;
             this.Controls.Add(this.textBoxSubjectPause);
             this.Controls.Add(this.textBoxSubjectName);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelCabinet);
             this.Name = "AddSubjectWindow";
-            this.Text = "AddSubjectWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Предмет";
             this.Load += new System.EventHandler(this.AddSubjectWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

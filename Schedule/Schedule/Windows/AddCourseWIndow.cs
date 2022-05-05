@@ -16,7 +16,7 @@ namespace Schedule.Windows
         int courseId = -1;
         int courseNumber = -1;
         bool create = true;
-
+        AdminPanel mainPanel = null;
         private void FillData()
         {
             DataBase dataBase = new DataBase();
@@ -34,8 +34,9 @@ namespace Schedule.Windows
 
 
 
-        public AddCourseWIndow(int courseId)
+        public AddCourseWIndow(int courseId, AdminPanel mainPanel)
         {
+            this.mainPanel = mainPanel;
             this.courseId = courseId;
             InitializeComponent();
         }
@@ -59,7 +60,15 @@ namespace Schedule.Windows
                     command.Parameters.Add("@I", MySqlDbType.Int32).Value = courseId;
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
-                    MessageBox.Show("Номер курса успешно изменен!");
+
+                    this.Hide();
+                    var res = MessageBox.Show("Номер курса успешно изменен!");
+                    if (res == DialogResult.OK)
+                    {
+                        this.Close();
+                        mainPanel.UpdateTable();
+                    }
+                    
                 }
                 else
                 {
@@ -81,7 +90,14 @@ namespace Schedule.Windows
                     command.Parameters.AddWithValue("course_number", course);
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
-                    MessageBox.Show("Курс успешно добавлен!");
+
+                    this.Hide();
+                    var res = MessageBox.Show("Курс успешно добавлен!");
+                    if (res == DialogResult.OK)
+                    {
+                        this.Close();
+                        mainPanel.UpdateTable();
+                    }   
                 }
                 else
                 {

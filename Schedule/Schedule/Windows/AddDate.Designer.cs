@@ -35,9 +35,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(66, 69);
+            this.button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(55, 78);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 23);
+            this.button1.Size = new System.Drawing.Size(110, 34);
             this.button1.TabIndex = 7;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
@@ -47,15 +48,16 @@
             // 
             this.labelCabinet.AutoSize = true;
             this.labelCabinet.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCabinet.Location = new System.Drawing.Point(42, 9);
+            this.labelCabinet.Location = new System.Drawing.Point(33, 9);
             this.labelCabinet.Name = "labelCabinet";
-            this.labelCabinet.Size = new System.Drawing.Size(129, 20);
+            this.labelCabinet.Size = new System.Drawing.Size(154, 20);
             this.labelCabinet.TabIndex = 6;
-            this.labelCabinet.Text = "Номер курса";
+            this.labelCabinet.Text = "Значение даты";
             this.labelCabinet.Click += new System.EventHandler(this.labelCabinet_Click);
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker1.Location = new System.Drawing.Point(11, 41);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
@@ -66,12 +68,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(219, 99);
+            this.ClientSize = new System.Drawing.Size(219, 115);
+            this.ControlBox = false;
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelCabinet);
             this.Name = "AddDate";
-            this.Text = "AddDate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Дата";
             this.Load += new System.EventHandler(this.AddDate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

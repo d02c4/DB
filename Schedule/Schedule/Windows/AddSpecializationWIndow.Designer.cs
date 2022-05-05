@@ -35,16 +35,17 @@
             // 
             // textBoxSpecialization
             // 
-            this.textBoxSpecialization.Location = new System.Drawing.Point(16, 44);
+            this.textBoxSpecialization.Location = new System.Drawing.Point(16, 32);
             this.textBoxSpecialization.Name = "textBoxSpecialization";
             this.textBoxSpecialization.Size = new System.Drawing.Size(247, 22);
             this.textBoxSpecialization.TabIndex = 8;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(96, 72);
+            this.button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(78, 60);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 23);
+            this.button1.Size = new System.Drawing.Size(117, 35);
             this.button1.TabIndex = 7;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
@@ -54,7 +55,7 @@
             // 
             this.labelCabinet.AutoSize = true;
             this.labelCabinet.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCabinet.Location = new System.Drawing.Point(12, 21);
+            this.labelCabinet.Location = new System.Drawing.Point(12, 9);
             this.labelCabinet.Name = "labelCabinet";
             this.labelCabinet.Size = new System.Drawing.Size(259, 20);
             this.labelCabinet.TabIndex = 6;
@@ -65,11 +66,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(288, 107);
+            this.ControlBox = false;
             this.Controls.Add(this.textBoxSpecialization);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelCabinet);
             this.Name = "AddSpecializationWIndow";
-            this.Text = "AddSpecializationWIndow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Специализация";
             this.Load += new System.EventHandler(this.AddSpecializationWIndow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

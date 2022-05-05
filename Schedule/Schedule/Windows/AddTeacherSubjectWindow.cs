@@ -22,9 +22,10 @@ namespace Schedule.Windows
         string subjectName = "";
         bool create = true;
 
-
-        public AddTeacherSubjectWindow(int teacherSubjectId)
+        AdminPanel adminPanel = null;
+        public AddTeacherSubjectWindow(int teacherSubjectId, AdminPanel adminPanel)
         {
+            this.adminPanel = adminPanel;
             this.teacherSubjectId = teacherSubjectId;
             InitializeComponent();
         }
@@ -187,7 +188,15 @@ namespace Schedule.Windows
                     dataBase.OpenConnection();
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
-                    MessageBox.Show("Предмет преподавателя успешно изменен!");
+                   
+                    this.Hide();
+                    var res = MessageBox.Show("Предмет преподавателя успешно изменен!");
+                    if (res == DialogResult.OK)
+                    {
+                        adminPanel.UpdateTable();
+                        this.Close();
+                    }
+
                 }
                 else
                 {
@@ -218,7 +227,13 @@ namespace Schedule.Windows
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
 
-                    MessageBox.Show("Предмет специалиста добавлен!");
+                    this.Hide();
+                    var res = MessageBox.Show("Предмет специалиста добавлен!");
+                    if (res == DialogResult.OK)
+                    {
+                        adminPanel.UpdateTable();
+                        this.Close();
+                    }
                 }
             }
         }

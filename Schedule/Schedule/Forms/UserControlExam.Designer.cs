@@ -49,6 +49,8 @@
             this.Controls.Add(this.lbdays);
             this.Name = "UserControlExam";
             this.Size = new System.Drawing.Size(157, 100);
+            this.Load += new System.EventHandler(this.UserControlExam_Load);
+            this.Click += new System.EventHandler(this.UserControlExam_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

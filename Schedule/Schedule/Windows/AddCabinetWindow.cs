@@ -18,8 +18,11 @@ namespace Schedule.Windows
 
         bool create = true;
 
-        public AddCabinetWindow(int cabinetId)
+        AdminPanel mainForm = null;
+
+        public AddCabinetWindow(int cabinetId, AdminPanel mainForm)
         {
+            this.mainForm = mainForm;
             this.cabinetId = cabinetId;
             InitializeComponent();
         }
@@ -60,8 +63,14 @@ namespace Schedule.Windows
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
                     cabinetNumber = cabinet;
-                    MessageBox.Show("Номер кабинета успешно изменен!");
 
+                    this.Hide();
+                    var res = MessageBox.Show("Номер кабинета успешно изменен!");
+                    if (res == DialogResult.OK)
+                    {
+                        this.Close();
+                        mainForm.UpdateTable();
+                    }
                 }
                 else
                 {
@@ -84,7 +93,13 @@ namespace Schedule.Windows
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
 
-                    MessageBox.Show("Кабинет успешно добавлен!");
+                    this.Hide();
+                    var res = MessageBox.Show("Кабинет успешно добавлен!");
+                    if (res == DialogResult.OK)
+                    {
+                        this.Close();
+                        mainForm.UpdateTable();
+                    }
                 }
                 else
                 {

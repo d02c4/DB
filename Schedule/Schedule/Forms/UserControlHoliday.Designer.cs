@@ -50,6 +50,7 @@
             this.Name = "UserControlHoliday";
             this.Size = new System.Drawing.Size(157, 100);
             this.Load += new System.EventHandler(this.UserControlHoliday_Load);
+            this.Click += new System.EventHandler(this.UserControlHoliday_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

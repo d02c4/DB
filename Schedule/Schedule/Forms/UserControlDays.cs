@@ -19,8 +19,11 @@ namespace Schedule
         string group_name;
         string subject_name;
 
-        public UserControlDays()
+        Form1 form1 = null;
+
+        public UserControlDays(Form1 form1)
         {
+            this.form1 = form1;
             InitializeComponent();
         }
 
@@ -42,8 +45,11 @@ namespace Schedule
 
         private void UserControlDays_Click(object sender, EventArgs e)
         {
-            ScheduleOnDate scheduleOnDate = new ScheduleOnDate(new DateTime(year, month, day), group_name, subject_name);
-            scheduleOnDate.Show();
+            if (group_name != "" && subject_name != "")
+            {
+                ScheduleOnDate scheduleOnDate = new ScheduleOnDate(new DateTime(year, month, day), group_name, subject_name, form1, true);
+                scheduleOnDate.Show();
+            }
         }
 
         private void UserControlDays_Load(object sender, EventArgs e)

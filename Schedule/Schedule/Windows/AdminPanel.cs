@@ -49,7 +49,7 @@ namespace Schedule
             FillComboBox();
         }
 
-        void UpdateTable()
+        public void UpdateTable()
         {
 
             DataBase dataBase = new DataBase();
@@ -92,9 +92,9 @@ namespace Schedule
             {
                 Schedule.Windows.AddCabinetWindow win1;
                 if (CheckSelected())
-                    win1 = new Schedule.Windows.AddCabinetWindow(SelectId());
+                    win1 = new Schedule.Windows.AddCabinetWindow(SelectId(), this);
                 else
-                    win1 = new Schedule.Windows.AddCabinetWindow(-1);
+                    win1 = new Schedule.Windows.AddCabinetWindow(-1, this);
                 win1.Show();
 
             }
@@ -102,9 +102,9 @@ namespace Schedule
             {
                 Schedule.Windows.AddCourseWIndow win2;
                 if (CheckSelected())
-                    win2 = new Schedule.Windows.AddCourseWIndow(SelectId());
+                    win2 = new Schedule.Windows.AddCourseWIndow(SelectId(), this);
                 else
-                    win2 = new Schedule.Windows.AddCourseWIndow(-1);
+                    win2 = new Schedule.Windows.AddCourseWIndow(-1, this);
                 win2.Show();
 
             }
@@ -112,63 +112,63 @@ namespace Schedule
             {
                 Schedule.Windows.AddDate win3;
                 if (CheckSelected())
-                    win3 = new Schedule.Windows.AddDate(SelectId());
+                    win3 = new Schedule.Windows.AddDate(SelectId(), this);
                 else
-                    win3 = new Schedule.Windows.AddDate(-1);
+                    win3 = new Schedule.Windows.AddDate(-1, this);
                 win3.Show();
             }
             else if (comboBoxTables.Text == "group")
             {
                 Schedule.Windows.AddGroupWIndow win4;
                 if (CheckSelected())
-                    win4 = new Schedule.Windows.AddGroupWIndow(SelectId());
+                    win4 = new Schedule.Windows.AddGroupWIndow(SelectId(), this);
                 else
-                    win4 = new Schedule.Windows.AddGroupWIndow(-1);
+                    win4 = new Schedule.Windows.AddGroupWIndow(-1, this);
                 win4.Show();
             }
             else if (comboBoxTables.Text == "specialization")
             {
                 Schedule.Windows.AddSpecializationWIndow win5;
                 if (CheckSelected())
-                    win5 = new Schedule.Windows.AddSpecializationWIndow(SelectId());
+                    win5 = new Schedule.Windows.AddSpecializationWIndow(SelectId(), this);
                 else
-                    win5 = new Schedule.Windows.AddSpecializationWIndow(-1);
+                    win5 = new Schedule.Windows.AddSpecializationWIndow(-1, this);
                 win5.Show();
             }
             else if (comboBoxTables.Text == "subject")
             {
                 Schedule.Windows.AddSubjectWindow win6;
                 if (CheckSelected())
-                    win6 = new Schedule.Windows.AddSubjectWindow(SelectId());
+                    win6 = new Schedule.Windows.AddSubjectWindow(SelectId(), this);
                 else
-                    win6 = new Schedule.Windows.AddSubjectWindow(-1);
+                    win6 = new Schedule.Windows.AddSubjectWindow(-1, this);
                 win6.Show();
             }
             else if (comboBoxTables.Text == "teacher")
             {
                 Schedule.Windows.AddTeacherWIndow win7;
                 if (CheckSelected())
-                    win7 = new Schedule.Windows.AddTeacherWIndow(SelectId());
+                    win7 = new Schedule.Windows.AddTeacherWIndow(SelectId(), this);
                 else
-                    win7 = new Schedule.Windows.AddTeacherWIndow(-1);
+                    win7 = new Schedule.Windows.AddTeacherWIndow(-1, this);
                 win7.Show();
             }
             else if (comboBoxTables.Text == "teacher_subject")
             {
                 Schedule.Windows.AddTeacherSubjectWindow win8;
                 if (CheckSelected())
-                    win8 = new Schedule.Windows.AddTeacherSubjectWindow(SelectId());
+                    win8 = new Schedule.Windows.AddTeacherSubjectWindow(SelectId(), this);
                 else
-                    win8 = new Schedule.Windows.AddTeacherSubjectWindow(-1);
+                    win8 = new Schedule.Windows.AddTeacherSubjectWindow(-1, this);
                 win8.Show();
             }
             else if (comboBoxTables.Text == "time")
             {
                 Schedule.Windows.AddTimeWindow win9;
                 if (CheckSelected())
-                    win9 = new Schedule.Windows.AddTimeWindow(SelectId());
+                    win9 = new Schedule.Windows.AddTimeWindow(SelectId(), this);
                 else
-                    win9 = new Schedule.Windows.AddTimeWindow(-1);
+                    win9 = new Schedule.Windows.AddTimeWindow(-1, this);
                 win9.Show();
             }
         }
@@ -190,49 +190,49 @@ namespace Schedule
         {
             if(comboBoxTables.Text == "cabinet")
             {
-                Schedule.Windows.AddCabinetWindow win1 = new Schedule.Windows.AddCabinetWindow(-1);
+                Schedule.Windows.AddCabinetWindow win1 = new Schedule.Windows.AddCabinetWindow(-1, this);
                 win1.Show();
                 
             }
             else if(comboBoxTables.Text == "course")
             {
-                Schedule.Windows.AddCourseWIndow win2 = new Schedule.Windows.AddCourseWIndow(-1);
+                Schedule.Windows.AddCourseWIndow win2 = new Schedule.Windows.AddCourseWIndow(-1, this);
                 win2.Show();
                 
             }
             else if(comboBoxTables.Text == "date")
             {
-                Schedule.Windows.AddDate win3 = new Schedule.Windows.AddDate(-1);
+                Schedule.Windows.AddDate win3 = new Schedule.Windows.AddDate(-1, this);
                 win3.Show();
             }
             else if(comboBoxTables.Text == "group")
             {
-                Schedule.Windows.AddGroupWIndow win4 = new Schedule.Windows.AddGroupWIndow(-1);
+                Schedule.Windows.AddGroupWIndow win4 = new Schedule.Windows.AddGroupWIndow(-1, this);
                 win4.Show();
             }
             else if(comboBoxTables.Text == "specialization")
             {
-                Schedule.Windows.AddSpecializationWIndow win5 = new Schedule.Windows.AddSpecializationWIndow(-1);
+                Schedule.Windows.AddSpecializationWIndow win5 = new Schedule.Windows.AddSpecializationWIndow(-1, this);
                 win5.Show();
             }
             else if(comboBoxTables.Text == "subject")
             {
-                Schedule.Windows.AddSubjectWindow win6 = new Schedule.Windows.AddSubjectWindow(-1);
+                Schedule.Windows.AddSubjectWindow win6 = new Schedule.Windows.AddSubjectWindow(-1, this);
                 win6.Show();
             }
             else if(comboBoxTables.Text == "teacher")
             {
-                Schedule.Windows.AddTeacherWIndow win7 = new Schedule.Windows.AddTeacherWIndow(-1);
+                Schedule.Windows.AddTeacherWIndow win7 = new Schedule.Windows.AddTeacherWIndow(-1, this);
                 win7.Show();
             }
             else if (comboBoxTables.Text == "teacher_subject")
             {
-                Schedule.Windows.AddTeacherSubjectWindow win8 = new Schedule.Windows.AddTeacherSubjectWindow(-1);
+                Schedule.Windows.AddTeacherSubjectWindow win8 = new Schedule.Windows.AddTeacherSubjectWindow(-1, this);
                 win8.Show();
             }
             else if (comboBoxTables.Text == "time")
             {
-                Schedule.Windows.AddTimeWindow win9 = new Schedule.Windows.AddTimeWindow(-1);
+                Schedule.Windows.AddTimeWindow win9 = new Schedule.Windows.AddTimeWindow(-1, this);
                 win9.Show();
             }
         }

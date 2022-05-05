@@ -12,8 +12,14 @@ namespace Schedule
 {
     public partial class UserControlHoliday : UserControl
     {
-        public UserControlHoliday()
+        int year;
+        int month;
+        int day;
+
+        Form1 form1;
+        public UserControlHoliday(Form1 form1)
         {
+            this.form1 = form1;
             InitializeComponent();
         }
 
@@ -22,9 +28,22 @@ namespace Schedule
             lbdays.Text = numday + "";
         }
 
+        public void SetData(int y, int m, int d)
+        {
+            year = y;
+            month = m;
+            day = d;
+        }
+
         private void UserControlHoliday_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void UserControlHoliday_Click(object sender, EventArgs e)
+        {
+            Schedule.Windows.HolidayOnDate holidayOnDate = new Windows.HolidayOnDate(form1, year, month, day);
+            holidayOnDate.Show();
         }
     }
 }

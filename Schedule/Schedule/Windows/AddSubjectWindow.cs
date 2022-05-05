@@ -33,8 +33,11 @@ namespace Schedule.Windows
             dataBase.CloseConnection();
         }
 
-        public AddSubjectWindow(int subjectId)
+        AdminPanel adminPanel = null;
+
+        public AddSubjectWindow(int subjectId, AdminPanel adminPanel)
         {
+            this.adminPanel = adminPanel;
             this.subjectId = subjectId;
             InitializeComponent();
         }
@@ -61,7 +64,16 @@ namespace Schedule.Windows
                         command.Parameters.Add("@I", MySqlDbType.Int32).Value = subjectId;
                         command.ExecuteNonQuery();
                         dataBase.CloseConnection();
-                        MessageBox.Show("Предмет успешно изменен!");
+
+                        this.Hide();
+                        var res = MessageBox.Show("Предмет успешно изменен!");
+                        if (res == DialogResult.OK)
+                        {
+                            adminPanel.UpdateTable();
+                            this.Close();
+                        }
+
+                        
                     }
                     else
                     {
@@ -87,7 +99,15 @@ namespace Schedule.Windows
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
 
-                    MessageBox.Show("Предмет успешно добавлен!");
+                    this.Hide();
+                    var res = MessageBox.Show("Предмет успешно добавлен!");
+                    if (res == DialogResult.OK)
+                    {
+                        adminPanel.UpdateTable();
+                        this.Close();
+                    }
+
+                    
                 }
                 else
                 {

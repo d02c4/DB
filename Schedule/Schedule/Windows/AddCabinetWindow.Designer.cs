@@ -39,15 +39,16 @@
             this.labelCabinet.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelCabinet.Location = new System.Drawing.Point(0, 9);
             this.labelCabinet.Name = "labelCabinet";
-            this.labelCabinet.Size = new System.Drawing.Size(166, 20);
+            this.labelCabinet.Size = new System.Drawing.Size(179, 20);
             this.labelCabinet.TabIndex = 0;
-            this.labelCabinet.Text = "Номер кабинета";
+            this.labelCabinet.Text = "Номер аудитории";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(42, 60);
+            this.button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(36, 60);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 23);
+            this.button1.Size = new System.Drawing.Size(113, 35);
             this.button1.TabIndex = 1;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
@@ -57,19 +58,23 @@
             // 
             this.textBoxCabinet.Location = new System.Drawing.Point(4, 32);
             this.textBoxCabinet.Name = "textBoxCabinet";
-            this.textBoxCabinet.Size = new System.Drawing.Size(162, 22);
+            this.textBoxCabinet.Size = new System.Drawing.Size(184, 22);
             this.textBoxCabinet.TabIndex = 2;
             // 
             // AddCabinetWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(174, 88);
+            this.ClientSize = new System.Drawing.Size(200, 99);
+            this.ControlBox = false;
             this.Controls.Add(this.textBoxCabinet);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelCabinet);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddCabinetWindow";
-            this.Text = "AddCabinetWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Аудитория";
             this.Load += new System.EventHandler(this.AddCabinetWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

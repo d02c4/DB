@@ -14,10 +14,10 @@ namespace Schedule
     public partial class EventForm : Form
     {
         static string server = "server=localhost;port=3306;username=root;password=root;database=shedules";
-        Form1 form = null;
+        Form1 form1 = null;
         public EventForm(Form1 form1)
         {
-            form = form1;
+            this.form1 = form1;
             InitializeComponent();
         }
 
@@ -33,11 +33,16 @@ namespace Schedule
             cmd.Parameters.AddWithValue("holiday_name", tbNameHoliday.Text);
             cmd.Parameters.AddWithValue("holiday_date", dtpDateHoliday.Value);
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Saved");
             cmd.Dispose();
             conn.Close();
 
-            form.Upd();
+            this.Hide();
+            var res = MessageBox.Show("Праздник успешно добавлен!");
+            if (res == DialogResult.OK)
+            {
+                form1.Upd();
+                this.Close();
+            }
 
         }
 

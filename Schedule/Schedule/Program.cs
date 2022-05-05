@@ -16,8 +16,8 @@ namespace Schedule
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Autentification());
-            Application.Run(new AdminPanel());
+            Application.Run(new Autentification());
+            //Application.Run(new AdminPanel());
         }
     }
 }

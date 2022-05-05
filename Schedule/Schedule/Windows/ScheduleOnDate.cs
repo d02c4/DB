@@ -25,7 +25,7 @@ namespace Schedule
         int result_date_id = -1;
         int result_time_id = -1;
         static string server = "server=localhost;port=3306;username=root;password=root;database=shedules";
-
+        bool isEnable;
 
 
         private int CheckExistenceDay()
@@ -170,14 +170,23 @@ namespace Schedule
         }
 
 
+        Form1 form1 = null;
 
-
-        public ScheduleOnDate(DateTime date, string group_name, string subject_name)
+        public ScheduleOnDate(DateTime date, string group_name, string subject_name, Form1 form1, bool isEnable)
         {
-            
+            this.isEnable = isEnable;
+            this.form1 = form1;
             this.date = date;
             this.group_name = group_name;
             this.subject_name = subject_name;
+            InitializeComponent();
+        }
+
+        public ScheduleOnDate(DateTime date, Form1 form1, bool isEnable)
+        {
+            this.isEnable = isEnable;
+            this.form1 = form1;
+            this.date = date;
             InitializeComponent();
         }
 
@@ -189,8 +198,11 @@ namespace Schedule
 
         private void ScheduleOnDate_Load(object sender, EventArgs e)
         {
+            
             ShowSheduleOnDate();
+            CheckEnable();
         }
+
         private void ShowSheduleOnDate()
         {
             lbDate.Text = $"{date.DayOfWeek}, {date.Day} {date.Month} {date.Year}";
@@ -393,8 +405,26 @@ namespace Schedule
                     "WHERE `time_value` = @D;", dateTime.TimeOfDay, false);
 
                 TryAddExam();
+                
+                //form1.Upd();
                 Upd();
             }
+        }
+
+        void CheckEnable()
+        {
+            if(!isEnable)
+            {
+                buttonAdd.Enabled = false;
+                buttonBack.Enabled = false;
+                buttonNext.Enabled = false;
+                cbTeacher.Enabled = false;
+            }
+        }
+
+        private void ScheduleOnDate_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form1.Upd();
         }
     }
 }

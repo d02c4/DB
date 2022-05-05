@@ -40,6 +40,7 @@
             this.lbData.TabIndex = 1;
             this.lbData.Text = "Data";
             this.lbData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbData.Click += new System.EventHandler(this.lbData_Click);
             // 
             // UserControlScheduleItem
             // 

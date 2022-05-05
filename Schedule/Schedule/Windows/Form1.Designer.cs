@@ -59,22 +59,24 @@
             // btnprevious
             // 
             this.btnprevious.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnprevious.Location = new System.Drawing.Point(49, 73);
+            this.btnprevious.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnprevious.Location = new System.Drawing.Point(12, 89);
             this.btnprevious.Name = "btnprevious";
-            this.btnprevious.Size = new System.Drawing.Size(75, 23);
+            this.btnprevious.Size = new System.Drawing.Size(87, 37);
             this.btnprevious.TabIndex = 1;
-            this.btnprevious.Text = "Previous";
+            this.btnprevious.Text = "<-----";
             this.btnprevious.UseVisualStyleBackColor = true;
             this.btnprevious.Click += new System.EventHandler(this.btnprevious_Click);
             // 
             // btnnext
             // 
             this.btnnext.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnnext.Location = new System.Drawing.Point(130, 73);
+            this.btnnext.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnnext.Location = new System.Drawing.Point(105, 89);
             this.btnnext.Name = "btnnext";
-            this.btnnext.Size = new System.Drawing.Size(75, 23);
+            this.btnnext.Size = new System.Drawing.Size(87, 37);
             this.btnnext.TabIndex = 1;
-            this.btnnext.Text = "Next";
+            this.btnnext.Text = "----->";
             this.btnnext.UseVisualStyleBackColor = true;
             this.btnnext.Click += new System.EventHandler(this.btnnext_Click);
             // 
@@ -82,66 +84,66 @@
             // 
             this.label2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label2.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(12, 138);
+            this.label2.Location = new System.Drawing.Point(-2, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 28);
+            this.label2.Size = new System.Drawing.Size(182, 28);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Monday";
+            this.label2.Text = "Понедельник";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
             this.label3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label3.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(175, 138);
+            this.label3.Location = new System.Drawing.Point(168, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(157, 28);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Tuesday";
+            this.label3.Text = "Вторник";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
             this.label4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label4.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(338, 138);
+            this.label4.Location = new System.Drawing.Point(331, 138);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 28);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Wednesday";
+            this.label4.Text = "Среда";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
             this.label5.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label5.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(501, 138);
+            this.label5.Location = new System.Drawing.Point(494, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(157, 28);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Thursday";
+            this.label5.Text = "Четверг";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
             this.label6.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label6.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(664, 138);
+            this.label6.Location = new System.Drawing.Point(647, 138);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(157, 28);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Friday";
+            this.label6.Text = "Пятница";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
             this.label7.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label7.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(827, 138);
+            this.label7.Location = new System.Drawing.Point(810, 138);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(157, 28);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Saturday";
+            this.label7.Text = "Суббота";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbdate
@@ -159,20 +161,21 @@
             // 
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label1.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(990, 138);
+            this.label1.Location = new System.Drawing.Point(969, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 28);
+            this.label1.Size = new System.Drawing.Size(165, 28);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Sunday";
+            this.label1.Text = "Воскресенье";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAddHoliday
             // 
-            this.btnAddHoliday.Location = new System.Drawing.Point(250, 73);
+            this.btnAddHoliday.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddHoliday.Location = new System.Drawing.Point(1166, 767);
             this.btnAddHoliday.Name = "btnAddHoliday";
-            this.btnAddHoliday.Size = new System.Drawing.Size(75, 23);
+            this.btnAddHoliday.Size = new System.Drawing.Size(247, 37);
             this.btnAddHoliday.TabIndex = 9;
-            this.btnAddHoliday.Text = "Holiday";
+            this.btnAddHoliday.Text = "Добавить праздник";
             this.btnAddHoliday.UseVisualStyleBackColor = true;
             this.btnAddHoliday.Click += new System.EventHandler(this.btnAddHoliday_Click);
             // 
@@ -182,7 +185,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.comboBoxSubject);
             this.groupBox1.Controls.Add(this.comboBoxGroup);
-            this.groupBox1.Location = new System.Drawing.Point(1181, 224);
+            this.groupBox1.Location = new System.Drawing.Point(1166, 178);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(295, 118);
             this.groupBox1.TabIndex = 10;
@@ -232,6 +235,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1488, 827);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAddHoliday);
             this.Controls.Add(this.label7);
@@ -240,7 +244,6 @@
             this.Controls.Add(this.lbdate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnnext);
             this.Controls.Add(this.btnprevious);

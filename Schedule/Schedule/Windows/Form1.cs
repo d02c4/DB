@@ -253,9 +253,14 @@ namespace Schedule
                 daysOnNextMonth = DateTime.DaysInMonth(year + 1, 1);
 
             // заполняем дни предыдущего месяца
-
+            int countSun = 1;
             for (int i = 0; i < dayoftheweek; i++)
             {
+                if(countSun == 7)
+                {
+                    countSun = 0;
+                }
+                countSun++;
                 UserNotControlDays userNotControlDays = new UserNotControlDays();
                 userNotControlDays.days(daysOnLastMonth - dayoftheweek + i + 1);
                 daycontainer.Controls.Add(userNotControlDays);
@@ -263,31 +268,46 @@ namespace Schedule
             // заполняем дни текущего месяца
             for (int i = 1; i <= days; i++)
             {
-                if (CheckHoliday(new DateTime(year, month, i)))
+                if(countSun == 7)
                 {
-                    UserControlHoliday userControlHoliday = new UserControlHoliday();
+                    UserNotControlDays userNotControlDays = new UserNotControlDays();
+                    userNotControlDays.days(i);
+                    daycontainer.Controls.Add(userNotControlDays);
+                    countSun = 0;
+                    countSun++;
+                }
+                else if (CheckHoliday(new DateTime(year, month, i)))
+                {
+                    UserControlHoliday userControlHoliday = new UserControlHoliday(this);
                     userControlHoliday.days(i);
+                    userControlHoliday.SetData(year, month, i);
                     daycontainer.Controls.Add(userControlHoliday);
+                    countSun++;
                 }
                 else if (CheckExamGroup(new DateTime(year, month, i), groupName) && groupName != "")
                 {
-                    UserControlExam userControlExam = new UserControlExam();
+                    UserControlExam userControlExam = new UserControlExam(this);
                     userControlExam.days(i);
+                    userControlExam.SetData(year, month, i);
                     daycontainer.Controls.Add(userControlExam);
+                    countSun++;
 
                 }
                 else if(unavailableDateArray != null && unavailableDateArray.Contains(new DateTime(year, month, i)))
                 {
-                    UserNotControlPauseBetweenExams userNotControlPauseBetweenExams = new UserNotControlPauseBetweenExams();
+                    UserNotControlPauseBetweenExams userNotControlPauseBetweenExams = new UserNotControlPauseBetweenExams(this);
                     userNotControlPauseBetweenExams.days(i);
+                    userNotControlPauseBetweenExams.SetData(year, month, i);
                     daycontainer.Controls.Add(userNotControlPauseBetweenExams);
+                    countSun++;
                 }
                 else
                 {
-                    UserControlDays userControlDays = new UserControlDays();
+                    UserControlDays userControlDays = new UserControlDays(this);
                     userControlDays.days(i);
                     userControlDays.SetData(year, month, i, comboBoxGroup.Text, comboBoxSubject.Text);
                     daycontainer.Controls.Add(userControlDays);
+                    countSun++;
                 }
             }
             //заполняем дни следующего месяца

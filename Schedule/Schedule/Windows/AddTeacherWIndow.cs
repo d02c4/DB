@@ -18,9 +18,10 @@ namespace Schedule.Windows
         string teacherAcademicTitle = "";
         bool create = true;
 
-
-        public AddTeacherWIndow(int teacherId)
+        AdminPanel adminPanel = null;
+        public AddTeacherWIndow(int teacherId, AdminPanel adminPanel)
         {
+            this.adminPanel = adminPanel;
             this.teacherId = teacherId;
             InitializeComponent();
         }
@@ -53,7 +54,14 @@ namespace Schedule.Windows
                 command.Parameters.Add("@I", MySqlDbType.Int32).Value = teacherId;
                 command.ExecuteNonQuery();
                 dataBase.CloseConnection();
-                MessageBox.Show("Предмет успешно изменен!");
+
+                this.Hide();
+                var res = MessageBox.Show("Данные преподавателя успешно изменены!");
+                if (res == DialogResult.OK)
+                {
+                    adminPanel.UpdateTable();
+                    this.Close();
+                }
             }
             else
             {
@@ -68,7 +76,13 @@ namespace Schedule.Windows
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
 
-                    MessageBox.Show("Кабинет успешно добавлен!");
+                    this.Hide();
+                    var res = MessageBox.Show("Преподаватель успешно добавлен!");
+                    if (res == DialogResult.OK)
+                    {
+                        adminPanel.UpdateTable();
+                        this.Close();
+                    }
                 }
                 else
                 {

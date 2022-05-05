@@ -105,9 +105,11 @@ namespace Schedule.Windows
             dataBase.CloseConnection();
         }
 
+        AdminPanel adminPanel = null;
 
-        public AddGroupWIndow(int groupId)
+        public AddGroupWIndow(int groupId, AdminPanel adminPanel)
         {
+            this.adminPanel = adminPanel;
             this.groupId = groupId;
             InitializeComponent();
         }
@@ -204,7 +206,16 @@ namespace Schedule.Windows
                         dataBase.OpenConnection();
                         command.ExecuteNonQuery();
                         dataBase.CloseConnection();
-                        MessageBox.Show("Специализация успешно изменена!");
+
+                        this.Hide();
+                        var res = MessageBox.Show("Группа успешно изменена!");
+                        if (res == DialogResult.OK)
+                        {
+                            adminPanel.UpdateTable();
+                            this.Close();
+                        }
+
+                        
                     }
                     else
                     {
@@ -251,7 +262,13 @@ namespace Schedule.Windows
                         command.ExecuteNonQuery();
                         dataBase.CloseConnection();
 
-                        MessageBox.Show("Группа успешно добавлена!");
+                        this.Hide();
+                        var res = MessageBox.Show("Группа успешно добавлена!");
+                        if (res == DialogResult.OK)
+                        {
+                            adminPanel.UpdateTable();
+                            this.Close();
+                        }
                     }
                 }
 

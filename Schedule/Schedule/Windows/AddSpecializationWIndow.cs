@@ -17,8 +17,10 @@ namespace Schedule.Windows
         string specializationName = "";
         bool create = true;
 
-        public AddSpecializationWIndow(int specializationId)
+        AdminPanel adminPanel = null;
+        public AddSpecializationWIndow(int specializationId, AdminPanel adminPanel)
         {
+            this.adminPanel = adminPanel;
             this.specializationId = specializationId;
             InitializeComponent();
         }
@@ -50,7 +52,16 @@ namespace Schedule.Windows
                 command.Parameters.Add("@I", MySqlDbType.Int32).Value = specializationId;
                 command.ExecuteNonQuery();
                 dataBase.CloseConnection();
-                MessageBox.Show("Специализация успешно изменена!");
+
+                this.Hide();
+                var res = MessageBox.Show("Специализация успешно изменена!");
+                if (res == DialogResult.OK)
+                {
+                    adminPanel.UpdateTable();
+                    this.Close();
+                }
+
+                
             }
             else
             {
@@ -60,7 +71,14 @@ namespace Schedule.Windows
                 command.Parameters.AddWithValue("specialization_name", textBoxSpecialization.Text);
                 command.ExecuteNonQuery();
                 dataBase.CloseConnection();
-                MessageBox.Show("Специализация успешно добавлена!");
+                this.Hide();
+                var res = MessageBox.Show("Специализация успешно добавлена!");
+                if (res == DialogResult.OK)
+                {
+                    adminPanel.UpdateTable();
+                    this.Close();
+                }
+                
             }
         }
 

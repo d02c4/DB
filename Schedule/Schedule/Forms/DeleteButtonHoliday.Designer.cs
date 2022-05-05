@@ -1,6 +1,6 @@
-﻿namespace Schedule
+﻿namespace Schedule.Forms
 {
-    partial class UserNotControlPauseBetweenExams
+    partial class DeleteButtonHoliday
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,36 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbdays = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lbdays
-            // 
-            this.lbdays.AutoSize = true;
-            this.lbdays.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbdays.Location = new System.Drawing.Point(12, 10);
-            this.lbdays.Name = "lbdays";
-            this.lbdays.Size = new System.Drawing.Size(34, 24);
-            this.lbdays.TabIndex = 2;
-            this.lbdays.Text = "00";
-            // 
-            // UserNotControlPauseBetweenExams
+            // DeleteButtonHoliday
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Controls.Add(this.lbdays);
-            this.Name = "UserNotControlPauseBetweenExams";
-            this.Size = new System.Drawing.Size(157, 100);
-            this.Load += new System.EventHandler(this.UserNotControlPauseBetweenExams_Load);
-            this.Click += new System.EventHandler(this.UserNotControlPauseBetweenExams_Click);
+            this.BackColor = System.Drawing.Color.Red;
+            this.Name = "DeleteButtonHoliday";
+            this.Size = new System.Drawing.Size(50, 50);
+            this.Load += new System.EventHandler(this.DeleteButtonHoliday_Load);
+            this.Click += new System.EventHandler(this.DeleteButtonHoliday_Click);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbdays;
     }
 }
