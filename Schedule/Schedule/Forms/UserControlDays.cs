@@ -48,7 +48,7 @@ namespace Schedule
             if (group_name != "" && subject_name != "")
             {
                 ScheduleOnDate scheduleOnDate = new ScheduleOnDate(new DateTime(year, month, day), group_name, subject_name, form1, true);
-                scheduleOnDate.Show();
+                scheduleOnDate.ShowDialog();
             }
         }
 

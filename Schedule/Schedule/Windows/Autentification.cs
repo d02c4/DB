@@ -18,7 +18,6 @@ namespace Schedule
             InitializeComponent();
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             if(textBoxLogin.Text != "" && textBoxPassword.Text != "")
@@ -32,17 +31,19 @@ namespace Schedule
                     conn.Close();
                     if (textBoxLogin.Text == "user")
                     {
-                        Form1 form1 = new Form1();
+                        Form1 form1 = new Form1(this, false);
                         form1.Show();
+                        
                     }
                     else if(textBoxLogin.Text == "admin")
                     {
-                        AdminPanel panel = new AdminPanel();
-                        panel.Show();
-                        this.Hide();
+                        Form1 form1 = new Form1(this, true);
+                        form1.Show();
                     }
-
                     this.Hide();
+                    textBoxLogin.Text = "";
+                    textBoxPassword.Text = "";
+                    
                 }
                 catch (Exception ex)
                 {
@@ -50,7 +51,6 @@ namespace Schedule
                 }
             }
         }
-
         private void Autentification_Load(object sender, EventArgs e)
         {
 

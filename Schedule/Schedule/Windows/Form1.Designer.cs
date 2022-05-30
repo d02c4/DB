@@ -45,7 +45,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxSubject = new System.Windows.Forms.ComboBox();
             this.comboBoxGroup = new System.Windows.Forms.ComboBox();
+            this.panelAutorization = new System.Windows.Forms.Panel();
+            this.panelAdminPanel = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxChooseTeacher = new System.Windows.Forms.ComboBox();
+            this.buttonSearchForTeacher = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBoxChooseSubject = new System.Windows.Forms.ComboBox();
+            this.buttonSearchForSubject = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // daycontainer
@@ -187,7 +199,7 @@
             this.groupBox1.Controls.Add(this.comboBoxGroup);
             this.groupBox1.Location = new System.Drawing.Point(1166, 178);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(295, 118);
+            this.groupBox1.Size = new System.Drawing.Size(319, 118);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select";
@@ -217,7 +229,7 @@
             this.comboBoxSubject.FormattingEnabled = true;
             this.comboBoxSubject.Location = new System.Drawing.Point(103, 30);
             this.comboBoxSubject.Name = "comboBoxSubject";
-            this.comboBoxSubject.Size = new System.Drawing.Size(186, 24);
+            this.comboBoxSubject.Size = new System.Drawing.Size(216, 24);
             this.comboBoxSubject.TabIndex = 11;
             this.comboBoxSubject.SelectedIndexChanged += new System.EventHandler(this.comboBoxGroup_SelectedIndexChanged);
             // 
@@ -226,15 +238,119 @@
             this.comboBoxGroup.FormattingEnabled = true;
             this.comboBoxGroup.Location = new System.Drawing.Point(103, 66);
             this.comboBoxGroup.Name = "comboBoxGroup";
-            this.comboBoxGroup.Size = new System.Drawing.Size(186, 24);
+            this.comboBoxGroup.Size = new System.Drawing.Size(216, 24);
             this.comboBoxGroup.TabIndex = 11;
             this.comboBoxGroup.SelectedIndexChanged += new System.EventHandler(this.comboBoxGroup_SelectedIndexChanged);
+            // 
+            // panelAutorization
+            // 
+            this.panelAutorization.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelAutorization.Location = new System.Drawing.Point(1392, 23);
+            this.panelAutorization.Name = "panelAutorization";
+            this.panelAutorization.Size = new System.Drawing.Size(63, 54);
+            this.panelAutorization.TabIndex = 11;
+            this.panelAutorization.Click += new System.EventHandler(this.panel1_Click);
+            // 
+            // panelAdminPanel
+            // 
+            this.panelAdminPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelAdminPanel.Location = new System.Drawing.Point(1377, 106);
+            this.panelAdminPanel.Name = "panelAdminPanel";
+            this.panelAdminPanel.Size = new System.Drawing.Size(78, 20);
+            this.panelAdminPanel.TabIndex = 12;
+            this.panelAdminPanel.Click += new System.EventHandler(this.panelAdminPanel_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.comboBoxChooseTeacher);
+            this.groupBox2.Controls.Add(this.buttonSearchForTeacher);
+            this.groupBox2.Location = new System.Drawing.Point(1166, 323);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(319, 139);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Расписание для преподавателя";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(6, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(152, 24);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Преподаватель";
+            // 
+            // comboBoxChooseTeacher
+            // 
+            this.comboBoxChooseTeacher.FormattingEnabled = true;
+            this.comboBoxChooseTeacher.Location = new System.Drawing.Point(10, 51);
+            this.comboBoxChooseTeacher.Name = "comboBoxChooseTeacher";
+            this.comboBoxChooseTeacher.Size = new System.Drawing.Size(303, 24);
+            this.comboBoxChooseTeacher.TabIndex = 11;
+            this.comboBoxChooseTeacher.SelectedIndexChanged += new System.EventHandler(this.comboBoxGroup_SelectedIndexChanged);
+            // 
+            // buttonSearchForTeacher
+            // 
+            this.buttonSearchForTeacher.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchForTeacher.Location = new System.Drawing.Point(10, 81);
+            this.buttonSearchForTeacher.Name = "buttonSearchForTeacher";
+            this.buttonSearchForTeacher.Size = new System.Drawing.Size(303, 37);
+            this.buttonSearchForTeacher.TabIndex = 9;
+            this.buttonSearchForTeacher.Text = "Вывести";
+            this.buttonSearchForTeacher.UseVisualStyleBackColor = true;
+            this.buttonSearchForTeacher.Click += new System.EventHandler(this.buttonSearchForTeacher_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.comboBoxChooseSubject);
+            this.groupBox3.Controls.Add(this.buttonSearchForSubject);
+            this.groupBox3.Location = new System.Drawing.Point(1166, 468);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(319, 139);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Список групп у которых стоит экзамен";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(6, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(114, 30);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Предмет";
+            // 
+            // comboBoxChooseSubject
+            // 
+            this.comboBoxChooseSubject.FormattingEnabled = true;
+            this.comboBoxChooseSubject.Location = new System.Drawing.Point(10, 51);
+            this.comboBoxChooseSubject.Name = "comboBoxChooseSubject";
+            this.comboBoxChooseSubject.Size = new System.Drawing.Size(303, 24);
+            this.comboBoxChooseSubject.TabIndex = 11;
+            // 
+            // buttonSearchForSubject
+            // 
+            this.buttonSearchForSubject.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchForSubject.Location = new System.Drawing.Point(10, 81);
+            this.buttonSearchForSubject.Name = "buttonSearchForSubject";
+            this.buttonSearchForSubject.Size = new System.Drawing.Size(303, 37);
+            this.buttonSearchForSubject.TabIndex = 9;
+            this.buttonSearchForSubject.Text = "Вывести";
+            this.buttonSearchForSubject.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1488, 827);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.panelAdminPanel);
+            this.Controls.Add(this.panelAutorization);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAddHoliday);
@@ -249,13 +365,18 @@
             this.Controls.Add(this.btnprevious);
             this.Controls.Add(this.daycontainer);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +400,15 @@
         private System.Windows.Forms.ComboBox comboBoxSubject;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panelAutorization;
+        private System.Windows.Forms.Panel panelAdminPanel;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBoxChooseTeacher;
+        private System.Windows.Forms.Button buttonSearchForTeacher;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBoxChooseSubject;
+        private System.Windows.Forms.Button buttonSearchForSubject;
     }
 }

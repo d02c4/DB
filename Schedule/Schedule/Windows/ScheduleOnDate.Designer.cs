@@ -297,6 +297,7 @@
             this.Controls.Add(this.containerSchedule);
             this.Controls.Add(this.label2);
             this.Name = "ScheduleOnDate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ScheduleOnDate";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ScheduleOnDate_FormClosing);
             this.Load += new System.EventHandler(this.ScheduleOnDate_Load);

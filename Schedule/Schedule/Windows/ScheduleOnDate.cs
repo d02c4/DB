@@ -175,6 +175,8 @@ namespace Schedule
         public ScheduleOnDate(DateTime date, string group_name, string subject_name, Form1 form1, bool isEnable)
         {
             this.isEnable = isEnable;
+            if (!form1.Root)
+                this.isEnable = false;
             this.form1 = form1;
             this.date = date;
             this.group_name = group_name;
@@ -230,16 +232,16 @@ namespace Schedule
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 DateTime time = DateTime.Now;
-                
+
                 string teacher = "";
                 string group = "";
                 string subject = "";
                 int cabinet = 0;
                 for (int j = 0; j < table.Columns.Count - 1; j++)
                 {
-                    switch(j)
+                    switch (j)
                     {
-                        case 0: 
+                        case 0:
                             DateTimeConverter te = new DateTimeConverter();
                             time = (DateTime)te.ConvertFromString(table.Rows[i][j].ToString());
                             break;
@@ -262,8 +264,12 @@ namespace Schedule
                     userControlScheduleItem.SetDataText(table.Rows[i][j].ToString());
                     containerSchedule.Controls.Add(userControlScheduleItem);
                 }
-                ButtonDelete buttonDelete = new ButtonDelete(this,date, time, teacher, subject, group, cabinet);
-                containerSchedule.Controls.Add(buttonDelete);
+                // если у пользователя есть права администратора
+                if (form1.Root)
+                {
+                    ButtonDelete buttonDelete = new ButtonDelete(this, date, time, teacher, subject, group, cabinet);
+                    containerSchedule.Controls.Add(buttonDelete);
+                }
             }
             dataBase.CloseConnection();
         }

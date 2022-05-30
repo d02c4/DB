@@ -16,7 +16,6 @@ namespace Schedule.Windows
         int year;
         int month;
         int day;
-
         Form1 form1 = null;
 
         public HolidayOnDate(Form1 form1, int y, int m, int d)
@@ -30,6 +29,8 @@ namespace Schedule.Windows
 
         private void HolidayOnDate_Load(object sender, EventArgs e)
         {
+            DateTime dt = new DateTime(year, month, day);
+            lbDate.Text = $"{dt.DayOfWeek}, {dt.Day} {dt.Month} {dt.Year}";
             FillTable();
         }
 
@@ -57,8 +58,12 @@ namespace Schedule.Windows
                     containerSchedule.Controls.Add(numHoliday);
                     containerSchedule.Controls.Add(userNotControlHolidayName);
 
-                    Schedule.Forms.DeleteButtonHoliday deleteButtonHoliday = new Forms.DeleteButtonHoliday(this, new DateTime(year, month, day), table.Rows[i][0].ToString());
-                    containerSchedule.Controls.Add(deleteButtonHoliday);
+                    // если вход совершен пользователем с правами аддминистратора
+                    if (form1.Root)
+                    {
+                        Schedule.Forms.DeleteButtonHoliday deleteButtonHoliday = new Forms.DeleteButtonHoliday(this, new DateTime(year, month, day), table.Rows[i][0].ToString());
+                        containerSchedule.Controls.Add(deleteButtonHoliday);
+                    }
                 }
             }
             

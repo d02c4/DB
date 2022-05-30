@@ -45,7 +45,7 @@ namespace Schedule
         private void UserControlExam_Click(object sender, EventArgs e)
         {
             ScheduleOnDate scheduleOnDate = new ScheduleOnDate(new DateTime(year, month, day), form1, false);
-            scheduleOnDate.Show();
+            scheduleOnDate.ShowDialog();
         }
     }
 }

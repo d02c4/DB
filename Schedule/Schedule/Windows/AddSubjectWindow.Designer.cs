@@ -45,7 +45,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(61, 125);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 37);
@@ -57,10 +57,10 @@
             // labelCabinet
             // 
             this.labelCabinet.AutoSize = true;
-            this.labelCabinet.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCabinet.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelCabinet.Location = new System.Drawing.Point(6, 18);
             this.labelCabinet.Name = "labelCabinet";
-            this.labelCabinet.Size = new System.Drawing.Size(197, 20);
+            this.labelCabinet.Size = new System.Drawing.Size(166, 20);
             this.labelCabinet.TabIndex = 6;
             this.labelCabinet.Text = "Название предмета";
             this.labelCabinet.Click += new System.EventHandler(this.labelCabinet_Click);
@@ -76,10 +76,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(6, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 20);
+            this.label1.Size = new System.Drawing.Size(189, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Время для подготовки";
             this.label1.Click += new System.EventHandler(this.label1_Click);

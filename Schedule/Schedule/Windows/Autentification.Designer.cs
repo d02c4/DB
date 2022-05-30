@@ -41,7 +41,7 @@
             this.button1.Location = new System.Drawing.Point(15, 110);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 33);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Войти";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -62,7 +62,7 @@
             this.textBoxLogin.Location = new System.Drawing.Point(15, 28);
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(120, 25);
-            this.textBoxLogin.TabIndex = 2;
+            this.textBoxLogin.TabIndex = 1;
             // 
             // textBoxPassword
             // 

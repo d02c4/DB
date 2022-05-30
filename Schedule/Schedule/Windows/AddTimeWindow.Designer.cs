@@ -35,7 +35,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(57, 63);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 32);
@@ -47,10 +47,10 @@
             // labelCabinet
             // 
             this.labelCabinet.AutoSize = true;
-            this.labelCabinet.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCabinet.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelCabinet.Location = new System.Drawing.Point(12, 9);
             this.labelCabinet.Name = "labelCabinet";
-            this.labelCabinet.Size = new System.Drawing.Size(69, 20);
+            this.labelCabinet.Size = new System.Drawing.Size(59, 20);
             this.labelCabinet.TabIndex = 9;
             this.labelCabinet.Text = "Время";
             // 

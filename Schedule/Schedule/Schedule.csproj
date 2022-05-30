@@ -62,6 +62,12 @@
     <Compile Include="Forms\DeleteButtonHoliday.Designer.cs">
       <DependentUpon>DeleteButtonHoliday.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Element.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Element.Designer.cs">
+      <DependentUpon>Element.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NumHoliday.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -179,6 +185,12 @@
     <Compile Include="Windows\HolidayOnDate.Designer.cs">
       <DependentUpon>HolidayOnDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ScheduleForTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ScheduleForTeacher.Designer.cs">
+      <DependentUpon>ScheduleForTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ScheduleOnDate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +241,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\DeleteButtonHoliday.resx">
       <DependentUpon>DeleteButtonHoliday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Element.resx">
+      <DependentUpon>Element.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NumHoliday.resx">
       <DependentUpon>NumHoliday.cs</DependentUpon>
@@ -292,9 +307,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Windows\HolidayOnDate.resx">
       <DependentUpon>HolidayOnDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ScheduleForTeacher.resx">
+      <DependentUpon>ScheduleForTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\ScheduleOnDate.resx">
       <DependentUpon>ScheduleOnDate.cs</DependentUpon>
@@ -335,6 +354,30 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="WindowUpdateData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\res.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ключ-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ключ-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\111.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

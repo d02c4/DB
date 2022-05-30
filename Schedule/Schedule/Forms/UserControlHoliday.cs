@@ -25,6 +25,8 @@ namespace Schedule
 
         public void days(int numday)
         {
+            DateTime dateTime = DateTime.Now;
+
             lbdays.Text = numday + "";
         }
 
@@ -43,7 +45,7 @@ namespace Schedule
         private void UserControlHoliday_Click(object sender, EventArgs e)
         {
             Schedule.Windows.HolidayOnDate holidayOnDate = new Windows.HolidayOnDate(form1, year, month, day);
-            holidayOnDate.Show();
+            holidayOnDate.ShowDialog();
         }
     }
 }

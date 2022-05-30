@@ -36,16 +36,16 @@
             // labelCabinet
             // 
             this.labelCabinet.AutoSize = true;
-            this.labelCabinet.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCabinet.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelCabinet.Location = new System.Drawing.Point(0, 9);
             this.labelCabinet.Name = "labelCabinet";
-            this.labelCabinet.Size = new System.Drawing.Size(179, 20);
+            this.labelCabinet.Size = new System.Drawing.Size(151, 20);
             this.labelCabinet.TabIndex = 0;
             this.labelCabinet.Text = "Номер аудитории";
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(36, 60);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 35);

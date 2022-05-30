@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Schedule.Windows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,24 +17,38 @@ namespace Schedule
     {
         int month, year;
 
-
+        Autentification autentification;
+        bool root;
+        public bool Root
+        {
+            get { return root; }
+        }
 
         // статическая переменна которая будет вызывать разные формы для месяцца и года
         public static int StaticMonth, StaticYear;
 
-        public Form1()
+        public Form1(Autentification autentification, bool root)
         {
+            this.root = root;
+            this.autentification = autentification;
             InitializeComponent();
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (!Root)
+            {
+                btnAddHoliday.Enabled = false;
+                panelAdminPanel.Hide();
+
+            }
+            else
+                btnAddHoliday.Enabled = true;
             displaDays();
             AddGroupInSelector();
             AddSubjectInSelector();
+            AddTeacherInSelector();
         }
-
 
         // добавление групп в селектор
         private void AddGroupInSelector()
@@ -50,7 +65,6 @@ namespace Schedule
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 comboBoxGroup.Items.Add(table.Rows[i].Field<string>(0));
-                //comboBoxGroup.Items.Add(table.Rows[i].ItemArray.GetValue(0));
             }
             dataBase.CloseConnection();
         }
@@ -71,7 +85,25 @@ namespace Schedule
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 comboBoxSubject.Items.Add(table.Rows[i].Field<string>(0));
-                //comboBoxGroup.Items.Add(table.Rows[i].ItemArray.GetValue(0));
+            }
+        }
+
+
+        // добавление преподавателей в селектор
+        private void AddTeacherInSelector()
+        {
+            DataBase dataBase = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            dataBase.OpenConnection();
+            MySqlCommand command = new MySqlCommand($"SELECT DISTINCT `teacher_fio` FROM `teacher` " +
+                $"ORDER BY `teacher_fio`;", dataBase.GetConnection());
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                comboBoxChooseTeacher.Items.Add(table.Rows[i].Field<string>(0));
             }
         }
 
@@ -133,7 +165,6 @@ namespace Schedule
         // подсчет количества дней занятых экзаменами или паузами
         private int CalcCountDisabledDay(DateTime date, string groupName)
         {
-
             DataTable table = ReturnAnswerRequest("SELECT COUNT(`subject_pause`), SUM(`subject_pause`) " +
                 "FROM `exam` " +
                 "JOIN `teacher_subject` ON `exam`.`teacher_subject_id` = `teacher_subject`.`teacher_subject_id` " +
@@ -156,13 +187,7 @@ namespace Schedule
         
 
         private DateTime[] GetUnavailableDateArray(DateTime date, string groupName, int pause)
-        {
-            //string str = "Select `subject_pause` from `exam` " +
-            //    "JOIN `date` ON `date`.`date_id` = `exam`.`date_id` " +
-            //    "JOIN `teacher_subject` ON `teacher_subject`.`teacher_subject_id` = `exam`.`teacher_subject_id` " +
-            //    "JOIN `subject` ON `subject`.`subject_id` = `teacher_subject`.`subject_id` " +
-            //    "WHERE `date_value` = @D"
-            
+        {       
             DataTable table = ReturnAnswerRequest("SELECT `date_value`, `subject_pause` " +
                 "FROM `exam` " +
                 "JOIN `teacher_subject` ON `exam`.`teacher_subject_id` = `teacher_subject`.`teacher_subject_id` " +
@@ -357,15 +382,47 @@ namespace Schedule
         private void comboBoxGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedGroup = comboBoxGroup.Text;
-            
             Upd();
+        }
+
+        public bool CheckClose = false;
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            CheckClose = true;
+            this.Close();
+            autentification.Show();
+        }
+
+        private void panelAdminPanel_Click(object sender, EventArgs e)
+        {
+            CheckClose = true ;
+            AdminPanel adminPanel = new AdminPanel(autentification, this);
+            this.Close();
+            adminPanel.Show();
+        }
+
+        private void buttonSearchForTeacher_Click(object sender, EventArgs e)
+        {
+            if (comboBoxChooseTeacher.Items.Contains(comboBoxChooseTeacher.Text))
+            {
+                Windows.ScheduleForTeacher scheduleForTeacher = new Windows.ScheduleForTeacher(comboBoxChooseTeacher.Text);
+                scheduleForTeacher.ShowDialog();
+            }
+            else
+                MessageBox.Show("Такого преподавателя нет в списке!");
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(!CheckClose)
+                autentification.Close();
         }
 
         private void btnnext_Click(object sender, EventArgs e)
         {
             // очищаем контейнер с днями
             daycontainer.Controls.Clear();
-
             if (month != 12)
             {
                 // увеличиваем значение месяца
@@ -380,6 +437,7 @@ namespace Schedule
 
         }
 
+
         public void Upd()
         {
             daycontainer.Controls.Clear();
@@ -387,3 +445,14 @@ namespace Schedule
         }
     }
 }
+
+
+/* TO DO
+ * 1) сделать панель для вывода расписания для конкретного преподавателя (Check)
+ * 2) сделать панель для панели админ для добавления экзамена
+ * 3) сделать панель для вывода всех экзаменов которые будут проводиться в указанное время (под вопросом нафига)
+ * 4) сделать панель для вывода всех групп у которых есть экзамен по заданному премету
+ * 5) Сделать правильную авторизацию по правам
+ * 6) фикс багов
+ * 7) ...
+*/

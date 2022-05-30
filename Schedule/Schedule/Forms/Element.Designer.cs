@@ -1,6 +1,6 @@
-﻿namespace Schedule
+﻿namespace Schedule.Forms
 {
-    partial class ButtonDelete
+    partial class Element
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,22 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // ButtonDelete
+            // label1
+            // 
+            this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(155, 50);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "№";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Element
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.BackgroundImage = global::Schedule.Properties.Resources._11;
-            this.Name = "ButtonDelete";
-            this.Size = new System.Drawing.Size(55, 55);
-            this.Load += new System.EventHandler(this.ButtonDelete_Load);
-            this.Click += new System.EventHandler(this.ButtonDelete_Click);
+            this.Controls.Add(this.label1);
+            this.Name = "Element";
+            this.Size = new System.Drawing.Size(157, 50);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }

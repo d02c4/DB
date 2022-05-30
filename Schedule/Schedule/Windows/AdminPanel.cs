@@ -17,9 +17,14 @@ namespace Schedule
     {
         static string server = "server=localhost;port=3306;username=root;password=root;database=shedules";
         DataSet ds = null;
-        public AdminPanel()
+        Form1 form1;
+        Autentification autentification;
+
+
+        public AdminPanel(Autentification autentification, Form1 form1)
         {
-            
+            this.autentification = autentification;
+            this.form1 = form1;
             InitializeComponent();
         }
 
@@ -235,6 +240,13 @@ namespace Schedule
                 Schedule.Windows.AddTimeWindow win9 = new Schedule.Windows.AddTimeWindow(-1, this);
                 win9.Show();
             }
+        }
+
+        private void panelAutorization_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1 form2 = new Form1(autentification,true);
+            form2.Show();
         }
     }
 }
