@@ -32,7 +32,7 @@ namespace Schedule
             {
                 MyCalendar.AddBoldedDate(new DateTime(2022, 4, 20));
 
-                DataBase dataBase = new DataBase();
+                DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
 
                 DataTable table = new DataTable();
 

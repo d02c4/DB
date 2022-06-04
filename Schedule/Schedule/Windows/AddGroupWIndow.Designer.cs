@@ -86,6 +86,7 @@
             // 
             // comboBoxCourse
             // 
+            this.comboBoxCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCourse.FormattingEnabled = true;
             this.comboBoxCourse.Location = new System.Drawing.Point(223, 32);
             this.comboBoxCourse.Name = "comboBoxCourse";
@@ -94,6 +95,7 @@
             // 
             // comboBoxSpecialization
             // 
+            this.comboBoxSpecialization.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSpecialization.FormattingEnabled = true;
             this.comboBoxSpecialization.Location = new System.Drawing.Point(223, 93);
             this.comboBoxSpecialization.Name = "comboBoxSpecialization";

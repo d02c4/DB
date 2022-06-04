@@ -49,6 +49,7 @@
             // 
             // comboBoxTables
             // 
+            this.comboBoxTables.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTables.FormattingEnabled = true;
             this.comboBoxTables.Location = new System.Drawing.Point(612, 12);
             this.comboBoxTables.Name = "comboBoxTables";

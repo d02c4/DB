@@ -36,7 +36,7 @@ namespace Schedule
             cmd.Dispose();
             conn.Close();
 
-            this.Hide();
+            
             var res = MessageBox.Show("Праздник успешно добавлен!");
             if (res == DialogResult.OK)
             {

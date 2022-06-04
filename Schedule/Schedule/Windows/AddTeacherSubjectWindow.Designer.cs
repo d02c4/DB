@@ -37,6 +37,7 @@
             // 
             // comboBoxTeacher
             // 
+            this.comboBoxTeacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTeacher.FormattingEnabled = true;
             this.comboBoxTeacher.Location = new System.Drawing.Point(12, 94);
             this.comboBoxTeacher.Name = "comboBoxTeacher";
@@ -45,6 +46,7 @@
             // 
             // comboBoxSubject
             // 
+            this.comboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSubject.FormattingEnabled = true;
             this.comboBoxSubject.Location = new System.Drawing.Point(12, 32);
             this.comboBoxSubject.Name = "comboBoxSubject";

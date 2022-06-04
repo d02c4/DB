@@ -19,7 +19,7 @@ namespace Schedule.Windows
         bool create = true;
         private void FillData()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -48,7 +48,7 @@ namespace Schedule.Windows
             {
                 if (textBoxSubjectName.Text != "" && textBoxSubjectPause.Text != "")
                 {
-                    DataBase dataBase = new DataBase();
+                    DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                     dataBase.OpenConnection();
                     MySqlCommand command = new MySqlCommand($"UPDATE `subject` SET `subject_name` = @N, `subject_pause` = @P WHERE `subject_id` = @I", dataBase.GetConnection());
 
@@ -91,7 +91,7 @@ namespace Schedule.Windows
                 f = Int32.TryParse(str, out pause);
                 if (f && textBoxSubjectName.Text != "")
                 {
-                    DataBase dataBase = new DataBase();
+                    DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                     dataBase.OpenConnection();
                     MySqlCommand command = new MySqlCommand($"INSERT INTO `subject`(`subject_name`, `subject_pause`) VALUES (?, ?)", dataBase.GetConnection());
                     command.Parameters.AddWithValue("subject_name", textBoxSubjectName.Text);

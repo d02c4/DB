@@ -38,7 +38,7 @@ namespace Schedule.Windows
         public void FillTable()
         {
             containerSchedule.Controls.Clear();
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();

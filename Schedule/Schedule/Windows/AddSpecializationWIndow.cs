@@ -27,7 +27,7 @@ namespace Schedule.Windows
 
         private void FillData()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -45,7 +45,7 @@ namespace Schedule.Windows
         {
             if (!create)
             {
-                DataBase dataBase = new DataBase();
+                DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                 dataBase.OpenConnection();
                 MySqlCommand command = new MySqlCommand($"UPDATE `specialization` SET `specialization_name` = @N WHERE `specialization_id` = @I", dataBase.GetConnection());
                 command.Parameters.Add("@N", MySqlDbType.VarChar).Value = textBoxSpecialization.Text;
@@ -65,7 +65,7 @@ namespace Schedule.Windows
             }
             else
             {
-                DataBase dataBase = new DataBase();
+                DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                 dataBase.OpenConnection();
                 MySqlCommand command = new MySqlCommand($"INSERT INTO `specialization`(`specialization_name`) VALUES (?)", dataBase.GetConnection());
                 command.Parameters.AddWithValue("specialization_name", textBoxSpecialization.Text);

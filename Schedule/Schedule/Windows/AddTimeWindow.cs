@@ -27,7 +27,7 @@ namespace Schedule.Windows
 
         private void FillData()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -44,7 +44,7 @@ namespace Schedule.Windows
         {
             if (!create)
             {
-                DataBase dataBase = new DataBase();
+                DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                 dataBase.OpenConnection();
                 MySqlCommand command = new MySqlCommand($"UPDATE `time` SET `time_value` = @T WHERE `time_id` = @I", dataBase.GetConnection());
                 command.Parameters.Add("@T", MySqlDbType.Time).Value = dateTimePicker1.Value.TimeOfDay;
@@ -64,7 +64,7 @@ namespace Schedule.Windows
             }
             else
             {
-                DataBase dataBase = new DataBase();
+                DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                 dataBase.OpenConnection();
                 string sql = "INSERT INTO `time`(time_value) values (?)";
                 MySqlCommand command = new MySqlCommand(sql, dataBase.GetConnection());

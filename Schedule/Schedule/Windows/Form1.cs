@@ -19,6 +19,19 @@ namespace Schedule
 
         Autentification autentification;
         bool root;
+
+        static string login1;
+        static public string Login
+        {
+            get { return login1; }
+        }
+
+        static string pass1;
+        static public string Pass
+        {
+            get { return pass1;}
+        }
+
         public bool Root
         {
             get { return root; }
@@ -27,8 +40,17 @@ namespace Schedule
         // статическая переменна которая будет вызывать разные формы для месяцца и года
         public static int StaticMonth, StaticYear;
 
-        public Form1(Autentification autentification, bool root)
+        /// <summary>
+        /// Конструктор для главного окна
+        /// </summary>
+        /// <param name="autentification">Указатель на страницу авторизации</param>
+        /// <param name="root">Пользователь имеет права администратора</param>
+        /// <param name="login">Логин</param>
+        /// <param name="pass">Пароль</param>
+        public Form1(Autentification autentification, bool root, string login, string pass)
         {
+            login1 = login;
+            pass1 = pass;
             this.root = root;
             this.autentification = autentification;
             InitializeComponent();
@@ -53,7 +75,7 @@ namespace Schedule
         // добавление групп в селектор
         private void AddGroupInSelector()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -65,6 +87,7 @@ namespace Schedule
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 comboBoxGroup.Items.Add(table.Rows[i].Field<string>(0));
+                comboBoxChooseGroup.Items.Add(table.Rows[i].Field<string>(0));
             }
             dataBase.CloseConnection();
         }
@@ -72,7 +95,7 @@ namespace Schedule
         // добавление предметов в селектор
         private void AddSubjectInSelector()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -85,6 +108,7 @@ namespace Schedule
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 comboBoxSubject.Items.Add(table.Rows[i].Field<string>(0));
+                comboBoxChooseSubject.Items.Add(table.Rows[i].Field<string>(0));
             }
         }
 
@@ -92,7 +116,7 @@ namespace Schedule
         // добавление преподавателей в селектор
         private void AddTeacherInSelector()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -109,7 +133,7 @@ namespace Schedule
 
         private bool CheckDate(DateTime date, string SQLRequest)
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -133,7 +157,7 @@ namespace Schedule
 
         private DataTable ReturnAnswerRequest(string SQLCommand, DateTime date, string groupName, bool f)
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -220,7 +244,7 @@ namespace Schedule
             string str = $"SELECT MAX(`subject_pause`) FROM `subject` " +
                 $"WHERE `subject_name` = @S";
 
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -419,6 +443,31 @@ namespace Schedule
                 autentification.Close();
         }
 
+        /// <summary>
+        /// Нажатие кнопки вывода расписания для группы
+        /// </summary>
+        private void buttonSearchForGroup_Click(object sender, EventArgs e)
+        {
+            if (comboBoxChooseGroup.Items.Contains(comboBoxChooseGroup.Text))
+            {
+                Windows.ScheduleForGroup scheduleForGroup = new Windows.ScheduleForGroup(comboBoxChooseGroup.Text);
+                scheduleForGroup.ShowDialog();
+            }
+            else
+                MessageBox.Show("Такой группы нет в списке!");
+        }
+
+        private void buttonSearchForSubject_Click(object sender, EventArgs e)
+        {
+            if (comboBoxChooseSubject.Items.Contains(comboBoxChooseSubject.Text))
+            {
+                Windows.ScheduleForSubject  scheduleForSubject = new Windows.ScheduleForSubject(comboBoxChooseSubject.Text);
+                scheduleForSubject.ShowDialog();
+            }
+            else
+                MessageBox.Show("Такого предмета нет в списке!");
+        }
+
         private void btnnext_Click(object sender, EventArgs e)
         {
             // очищаем контейнер с днями
@@ -449,10 +498,10 @@ namespace Schedule
 
 /* TO DO
  * 1) сделать панель для вывода расписания для конкретного преподавателя (Check)
- * 2) сделать панель для панели админ для добавления экзамена
+ * 2) сделать панель для панели админ для добавления экзамена  
  * 3) сделать панель для вывода всех экзаменов которые будут проводиться в указанное время (под вопросом нафига)
  * 4) сделать панель для вывода всех групп у которых есть экзамен по заданному премету
- * 5) Сделать правильную авторизацию по правам
+ * 5) Сделать правильную авторизацию по правам (Check)
  * 6) фикс багов
  * 7) ...
 */

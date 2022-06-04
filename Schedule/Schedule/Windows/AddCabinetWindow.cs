@@ -29,7 +29,7 @@ namespace Schedule.Windows
 
         private void FillData()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -55,7 +55,7 @@ namespace Schedule.Windows
                 f = Int32.TryParse(str, out cabinet);
                 if (f)
                 {
-                    DataBase dataBase = new DataBase();
+                    DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                     dataBase.OpenConnection();
                     MySqlCommand command = new MySqlCommand($"UPDATE `cabinet` SET `cabinet_number` = @N WHERE `cabinet_id` = @I", dataBase.GetConnection());
                     command.Parameters.Add("@N", MySqlDbType.Int32).Value = cabinet;
@@ -86,7 +86,7 @@ namespace Schedule.Windows
                 f = Int32.TryParse(str, out cabinet);
                 if (f)
                 {
-                    DataBase dataBase = new DataBase();
+                    DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                     dataBase.OpenConnection();
                     MySqlCommand command = new MySqlCommand($"INSERT INTO `cabinet`(`cabinet_number`) VALUES (?)", dataBase.GetConnection());
                     command.Parameters.AddWithValue("cabinet_number", cabinet);

@@ -18,7 +18,6 @@ namespace Schedule
         string subject_name;
 
         int selector = 2;
-
         int result_group_id = -1;
         int result_cabinet_id = -1;
         int result_teacher_subject_id = -1;
@@ -32,7 +31,7 @@ namespace Schedule
         {
             string sql = "SELECT * FROM `date` " +
                 "WHERE `date_value` = @D";
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -69,7 +68,7 @@ namespace Schedule
                 "SELECT `date_id` FROM `date` ORDER BY `date_id` DESC LIMIT 1;" +
                 "COMMIT;";
 
-                DataBase dataBase = new DataBase();
+                DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                 DataTable table = new DataTable();
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 dataBase.OpenConnection();
@@ -104,7 +103,7 @@ namespace Schedule
 
         private int ReturnIdFromString(string SQLcommand)
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -118,7 +117,7 @@ namespace Schedule
 
         private int ReturnIdFromDateTime(string SQLcommand, TimeSpan dateTime, bool f)
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -163,13 +162,18 @@ namespace Schedule
                     cbHour.Enabled = false;
                     cbTeacher.Enabled = false;
                     break;
+                case 5:
+                    cbGroup.Enabled = false;
+                    cbSubject.Enabled = false;
+                    cbCabinet.Enabled = false;
+                    cbHour.Enabled = false;
+                    cbTeacher.Enabled = false;
+                    break;
                 default:
                     break;
             }
 
         }
-
-
         Form1 form1 = null;
 
         public ScheduleOnDate(DateTime date, string group_name, string subject_name, Form1 form1, bool isEnable)
@@ -200,7 +204,7 @@ namespace Schedule
 
         private void ScheduleOnDate_Load(object sender, EventArgs e)
         {
-            
+            cbGroup.Text = group_name;
             ShowSheduleOnDate();
             CheckEnable();
         }
@@ -211,7 +215,7 @@ namespace Schedule
             cbGroup.Text = group_name;
             cbSubject.Text = subject_name;
             SelectAction();
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -276,7 +280,7 @@ namespace Schedule
 
         private DataTable ReturnAnswerRequest(string SQLRequest)
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -336,7 +340,7 @@ namespace Schedule
         private ComboBox ComboBoxFillData(ComboBox comboBox, string SQLcommand)
         {
             comboBox.Items.Clear();
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -380,6 +384,7 @@ namespace Schedule
             }
             else
             {
+                selector++;
                 buttonNext.Enabled = false;
                 buttonAdd.Enabled = true;
                 

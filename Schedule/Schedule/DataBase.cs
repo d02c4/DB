@@ -18,6 +18,13 @@ namespace Schedule
         static MySqlConnection connection = new MySqlConnection(server);
 
 
+        public DataBase(string login, string pass)
+        {
+            string s = $"server=localhost;port=3306;username={login};password={pass};database=shedules";
+            server = s;
+        }
+
+
         // функция для подключения к базе данных
         public void OpenConnection()
         {

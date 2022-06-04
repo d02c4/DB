@@ -19,7 +19,7 @@ namespace Schedule.Windows
         AdminPanel mainPanel = null;
         private void FillData()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -45,7 +45,7 @@ namespace Schedule.Windows
         {
             if (!create)
             {
-                DataBase dataBase = new DataBase();
+                DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                 dataBase.OpenConnection();
                 MySqlCommand command = new MySqlCommand($"UPDATE `course` SET `course_number` = @N WHERE `course_id` = @I", dataBase.GetConnection());
                 
@@ -84,7 +84,7 @@ namespace Schedule.Windows
                 f = Int32.TryParse(str, out course);
                 if (f)
                 {
-                    DataBase dataBase = new DataBase();
+                    DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                     dataBase.OpenConnection();
                     MySqlCommand command = new MySqlCommand($"INSERT INTO `course`(`course_number`) VALUES (?)", dataBase.GetConnection());
                     command.Parameters.AddWithValue("course_number", course);

@@ -28,7 +28,7 @@ namespace Schedule.Windows
 
         private void FillData()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -46,7 +46,7 @@ namespace Schedule.Windows
         {
             if (!create)
             {
-                DataBase dataBase = new DataBase();
+                DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                 dataBase.OpenConnection();
                 MySqlCommand command = new MySqlCommand($"UPDATE `teacher` SET `teacher_fio` = @N, `teacher_academic_title` = @P WHERE `teacher_id` = @I", dataBase.GetConnection());
                 command.Parameters.Add("@N", MySqlDbType.VarChar).Value = textBoxTeacherFIO.Text;
@@ -68,7 +68,7 @@ namespace Schedule.Windows
 
                 if (textBoxTeacherFIO.Text != "" && textBoxTeacherAcademicTitle.Text != "")
                 {
-                    DataBase dataBase = new DataBase();
+                    DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                     dataBase.OpenConnection();
                     MySqlCommand command = new MySqlCommand($"INSERT INTO `teacher`(`teacher_fio`, `teacher_academic_title`) VALUES (?, ?)", dataBase.GetConnection());
                     command.Parameters.AddWithValue("teacher_fio", textBoxTeacherFIO.Text);

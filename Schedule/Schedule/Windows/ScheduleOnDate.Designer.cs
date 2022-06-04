@@ -112,7 +112,7 @@
             this.panel2.Controls.Add(this.lbDate);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1261, 48);
+            this.panel2.Size = new System.Drawing.Size(1268, 48);
             this.panel2.TabIndex = 7;
             // 
             // lbDate
@@ -121,7 +121,7 @@
             this.lbDate.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbDate.Location = new System.Drawing.Point(3, 0);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(1213, 48);
+            this.lbDate.Size = new System.Drawing.Size(1265, 48);
             this.lbDate.TabIndex = 7;
             this.lbDate.Text = "Date";
             this.lbDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,6 +139,7 @@
             // 
             // cbHour
             // 
+            this.cbHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHour.FormattingEnabled = true;
             this.cbHour.Location = new System.Drawing.Point(118, 189);
             this.cbHour.Name = "cbHour";
@@ -147,6 +148,7 @@
             // 
             // cbTeacher
             // 
+            this.cbTeacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTeacher.FormattingEnabled = true;
             this.cbTeacher.Location = new System.Drawing.Point(118, 17);
             this.cbTeacher.Name = "cbTeacher";
@@ -171,6 +173,7 @@
             // 
             // cbCabinet
             // 
+            this.cbCabinet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCabinet.FormattingEnabled = true;
             this.cbCabinet.Location = new System.Drawing.Point(118, 143);
             this.cbCabinet.Name = "cbCabinet";
@@ -194,7 +197,7 @@
             this.groupBox1.Controls.Add(this.cbSubject);
             this.groupBox1.Location = new System.Drawing.Point(909, 93);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(352, 277);
+            this.groupBox1.Size = new System.Drawing.Size(359, 277);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select parameters";
@@ -212,9 +215,9 @@
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAdd.Location = new System.Drawing.Point(259, 240);
+            this.buttonAdd.Location = new System.Drawing.Point(253, 240);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(85, 31);
+            this.buttonAdd.Size = new System.Drawing.Size(100, 31);
             this.buttonAdd.TabIndex = 12;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -287,7 +290,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1265, 513);
+            this.ClientSize = new System.Drawing.Size(1272, 513);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);

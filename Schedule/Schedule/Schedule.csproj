@@ -185,6 +185,18 @@
     <Compile Include="Windows\HolidayOnDate.Designer.cs">
       <DependentUpon>HolidayOnDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ScheduleForGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ScheduleForGroup.Designer.cs">
+      <DependentUpon>ScheduleForGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ScheduleForSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ScheduleForSubject.Designer.cs">
+      <DependentUpon>ScheduleForSubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ScheduleForTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +323,12 @@
     </Compile>
     <EmbeddedResource Include="Windows\HolidayOnDate.resx">
       <DependentUpon>HolidayOnDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ScheduleForGroup.resx">
+      <DependentUpon>ScheduleForGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ScheduleForSubject.resx">
+      <DependentUpon>ScheduleForSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\ScheduleForTeacher.resx">
       <DependentUpon>ScheduleForTeacher.cs</DependentUpon>

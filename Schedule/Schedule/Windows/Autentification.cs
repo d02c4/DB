@@ -18,6 +18,30 @@ namespace Schedule
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Проверяет права пользователя
+        /// </summary>
+        bool CheckRoot()
+        {
+            bool f = false;
+            DataBase dataBase = new DataBase(textBoxLogin.Text, textBoxPassword.Text);
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            dataBase.OpenConnection();
+            MySqlCommand command = new MySqlCommand($"SHOW GRANTS FOR '{textBoxLogin.Text}'@'localhost';", dataBase.GetConnection());
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            string str = table.Rows[0][0].ToString();
+            if (str.Contains("DELETE") && str.Contains("INSERT") && str.Contains("UPDATE") || str.Contains("ALL PRIVILEGES"))
+            {
+                f = true;
+            }
+            else
+                f = false;
+            dataBase.CloseConnection();
+            return f;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if(textBoxLogin.Text != "" && textBoxPassword.Text != "")
@@ -28,18 +52,12 @@ namespace Schedule
                     DataTable table = new DataTable();
                     MySqlConnection conn = new MySqlConnection(server);
                     conn.Open();
+                    CheckRoot();
                     conn.Close();
-                    if (textBoxLogin.Text == "user")
-                    {
-                        Form1 form1 = new Form1(this, false);
-                        form1.Show();
-                        
-                    }
-                    else if(textBoxLogin.Text == "admin")
-                    {
-                        Form1 form1 = new Form1(this, true);
-                        form1.Show();
-                    }
+
+                    Form1 form1 = new Form1(this, CheckRoot(), textBoxLogin.Text, textBoxPassword.Text);
+                    form1.Show();
+
                     this.Hide();
                     textBoxLogin.Text = "";
                     textBoxPassword.Text = "";

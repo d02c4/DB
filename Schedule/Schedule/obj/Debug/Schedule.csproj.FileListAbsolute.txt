@@ -51,3 +51,5 @@ D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.exe
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.pdb
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Forms.Element.resources
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.ScheduleForTeacher.resources
+D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.ScheduleForGroup.resources
+D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.ScheduleForSubject.resources

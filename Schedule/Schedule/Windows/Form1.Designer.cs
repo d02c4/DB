@@ -53,11 +53,16 @@
             this.buttonSearchForTeacher = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.comboBoxChooseGroup = new System.Windows.Forms.ComboBox();
+            this.buttonSearchForGroup = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.comboBoxChooseSubject = new System.Windows.Forms.ComboBox();
             this.buttonSearchForSubject = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // daycontainer
@@ -183,9 +188,9 @@
             // btnAddHoliday
             // 
             this.btnAddHoliday.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddHoliday.Location = new System.Drawing.Point(1166, 767);
+            this.btnAddHoliday.Location = new System.Drawing.Point(1176, 767);
             this.btnAddHoliday.Name = "btnAddHoliday";
-            this.btnAddHoliday.Size = new System.Drawing.Size(247, 37);
+            this.btnAddHoliday.Size = new System.Drawing.Size(317, 37);
             this.btnAddHoliday.TabIndex = 9;
             this.btnAddHoliday.Text = "Добавить праздник";
             this.btnAddHoliday.UseVisualStyleBackColor = true;
@@ -199,7 +204,7 @@
             this.groupBox1.Controls.Add(this.comboBoxGroup);
             this.groupBox1.Location = new System.Drawing.Point(1166, 178);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(319, 118);
+            this.groupBox1.Size = new System.Drawing.Size(332, 118);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select";
@@ -226,6 +231,7 @@
             // 
             // comboBoxSubject
             // 
+            this.comboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSubject.FormattingEnabled = true;
             this.comboBoxSubject.Location = new System.Drawing.Point(103, 30);
             this.comboBoxSubject.Name = "comboBoxSubject";
@@ -235,6 +241,7 @@
             // 
             // comboBoxGroup
             // 
+            this.comboBoxGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGroup.FormattingEnabled = true;
             this.comboBoxGroup.Location = new System.Drawing.Point(103, 66);
             this.comboBoxGroup.Name = "comboBoxGroup";
@@ -267,7 +274,7 @@
             this.groupBox2.Controls.Add(this.buttonSearchForTeacher);
             this.groupBox2.Location = new System.Drawing.Point(1166, 323);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(319, 139);
+            this.groupBox2.Size = new System.Drawing.Size(332, 139);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Расписание для преподавателя";
@@ -284,19 +291,19 @@
             // 
             // comboBoxChooseTeacher
             // 
+            this.comboBoxChooseTeacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChooseTeacher.FormattingEnabled = true;
             this.comboBoxChooseTeacher.Location = new System.Drawing.Point(10, 51);
             this.comboBoxChooseTeacher.Name = "comboBoxChooseTeacher";
-            this.comboBoxChooseTeacher.Size = new System.Drawing.Size(303, 24);
+            this.comboBoxChooseTeacher.Size = new System.Drawing.Size(311, 24);
             this.comboBoxChooseTeacher.TabIndex = 11;
-            this.comboBoxChooseTeacher.SelectedIndexChanged += new System.EventHandler(this.comboBoxGroup_SelectedIndexChanged);
             // 
             // buttonSearchForTeacher
             // 
             this.buttonSearchForTeacher.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSearchForTeacher.Location = new System.Drawing.Point(10, 81);
             this.buttonSearchForTeacher.Name = "buttonSearchForTeacher";
-            this.buttonSearchForTeacher.Size = new System.Drawing.Size(303, 37);
+            this.buttonSearchForTeacher.Size = new System.Drawing.Size(311, 37);
             this.buttonSearchForTeacher.TabIndex = 9;
             this.buttonSearchForTeacher.Text = "Вывести";
             this.buttonSearchForTeacher.UseVisualStyleBackColor = true;
@@ -305,14 +312,14 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.comboBoxChooseSubject);
-            this.groupBox3.Controls.Add(this.buttonSearchForSubject);
+            this.groupBox3.Controls.Add(this.comboBoxChooseGroup);
+            this.groupBox3.Controls.Add(this.buttonSearchForGroup);
             this.groupBox3.Location = new System.Drawing.Point(1166, 468);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(319, 139);
+            this.groupBox3.Size = new System.Drawing.Size(332, 139);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Список групп у которых стоит экзамен";
+            this.groupBox3.Text = "Список экзаменов для группы";
             // 
             // label11
             // 
@@ -320,16 +327,59 @@
             this.label11.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.Location = new System.Drawing.Point(6, 18);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(114, 30);
+            this.label11.Size = new System.Drawing.Size(77, 24);
             this.label11.TabIndex = 12;
-            this.label11.Text = "Предмет";
+            this.label11.Text = "Группа";
+            // 
+            // comboBoxChooseGroup
+            // 
+            this.comboBoxChooseGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxChooseGroup.FormattingEnabled = true;
+            this.comboBoxChooseGroup.Location = new System.Drawing.Point(10, 51);
+            this.comboBoxChooseGroup.Name = "comboBoxChooseGroup";
+            this.comboBoxChooseGroup.Size = new System.Drawing.Size(311, 24);
+            this.comboBoxChooseGroup.TabIndex = 11;
+            // 
+            // buttonSearchForGroup
+            // 
+            this.buttonSearchForGroup.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchForGroup.Location = new System.Drawing.Point(10, 81);
+            this.buttonSearchForGroup.Name = "buttonSearchForGroup";
+            this.buttonSearchForGroup.Size = new System.Drawing.Size(311, 37);
+            this.buttonSearchForGroup.TabIndex = 9;
+            this.buttonSearchForGroup.Text = "Вывести";
+            this.buttonSearchForGroup.UseVisualStyleBackColor = true;
+            this.buttonSearchForGroup.Click += new System.EventHandler(this.buttonSearchForGroup_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.comboBoxChooseSubject);
+            this.groupBox4.Controls.Add(this.buttonSearchForSubject);
+            this.groupBox4.Location = new System.Drawing.Point(1166, 622);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(332, 139);
+            this.groupBox4.TabIndex = 15;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Список всех групп у которых экзамен по";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(6, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(91, 24);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Предмет";
             // 
             // comboBoxChooseSubject
             // 
+            this.comboBoxChooseSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChooseSubject.FormattingEnabled = true;
             this.comboBoxChooseSubject.Location = new System.Drawing.Point(10, 51);
             this.comboBoxChooseSubject.Name = "comboBoxChooseSubject";
-            this.comboBoxChooseSubject.Size = new System.Drawing.Size(303, 24);
+            this.comboBoxChooseSubject.Size = new System.Drawing.Size(311, 24);
             this.comboBoxChooseSubject.TabIndex = 11;
             // 
             // buttonSearchForSubject
@@ -337,16 +387,18 @@
             this.buttonSearchForSubject.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSearchForSubject.Location = new System.Drawing.Point(10, 81);
             this.buttonSearchForSubject.Name = "buttonSearchForSubject";
-            this.buttonSearchForSubject.Size = new System.Drawing.Size(303, 37);
+            this.buttonSearchForSubject.Size = new System.Drawing.Size(311, 37);
             this.buttonSearchForSubject.TabIndex = 9;
             this.buttonSearchForSubject.Text = "Вывести";
             this.buttonSearchForSubject.UseVisualStyleBackColor = true;
+            this.buttonSearchForSubject.Click += new System.EventHandler(this.buttonSearchForSubject_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1488, 827);
+            this.ClientSize = new System.Drawing.Size(1510, 813);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panelAdminPanel);
@@ -377,6 +429,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -408,6 +462,10 @@
         private System.Windows.Forms.Button buttonSearchForTeacher;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBoxChooseGroup;
+        private System.Windows.Forms.Button buttonSearchForGroup;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBoxChooseSubject;
         private System.Windows.Forms.Button buttonSearchForSubject;
     }

@@ -39,7 +39,7 @@ namespace Schedule
         // поиск всех индексов с заданными параметрами
         private DataTable SearchIndexTable()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();

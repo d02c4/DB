@@ -26,7 +26,7 @@ namespace Schedule.Windows
 
         void courseValue()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -40,7 +40,7 @@ namespace Schedule.Windows
 
         void SpecializationValue()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -54,7 +54,7 @@ namespace Schedule.Windows
 
         private int ReturnIdCourse(string Course)
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -69,7 +69,7 @@ namespace Schedule.Windows
 
         private int ReturnIdSpec(string Spec)
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -84,7 +84,7 @@ namespace Schedule.Windows
 
         private void FillData()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -116,7 +116,7 @@ namespace Schedule.Windows
 
         void AddCourse()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             dataBase.OpenConnection();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable dt = new DataTable();
@@ -136,7 +136,7 @@ namespace Schedule.Windows
 
         void AddSpecialization()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             dataBase.OpenConnection();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable dt = new DataTable();
@@ -193,7 +193,7 @@ namespace Schedule.Windows
 
                     if (f)
                     {
-                        DataBase dataBase = new DataBase();
+                        DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                         dataBase.OpenConnection();
                         MySqlCommand command = new MySqlCommand($"UPDATE `group` SET `group_name` = @GName, `group_size` = @GSize, `course_id` = @CId, `specialization_id` = @SId WHERE `group_id` = @GId;", dataBase.GetConnection());
                         command.Parameters.Add("@GName", MySqlDbType.VarChar).Value = textBoxGroup.Text;
@@ -233,7 +233,7 @@ namespace Schedule.Windows
 
                     if (f)
                     {
-                        DataBase dataBase = new DataBase();
+                        DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                         DataTable table = new DataTable();
                         MySqlDataAdapter adapter = new MySqlDataAdapter();
                         dataBase.OpenConnection();

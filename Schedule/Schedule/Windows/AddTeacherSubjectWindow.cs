@@ -33,7 +33,7 @@ namespace Schedule.Windows
 
         void teacherValue()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -47,7 +47,7 @@ namespace Schedule.Windows
 
         void subjectValue()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -61,7 +61,7 @@ namespace Schedule.Windows
 
         private void FillData()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -83,7 +83,7 @@ namespace Schedule.Windows
 
         private int ReturnIdTeacher(string Teach)
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -98,7 +98,7 @@ namespace Schedule.Windows
 
         private int ReturnIdSubject(string Sub)
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             dataBase.OpenConnection();
@@ -114,7 +114,7 @@ namespace Schedule.Windows
 
         void AddTeacher()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             dataBase.OpenConnection();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable dt = new DataTable();
@@ -133,7 +133,7 @@ namespace Schedule.Windows
 
         void AddSubject()
         {
-            DataBase dataBase = new DataBase();
+            DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
             dataBase.OpenConnection();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable dt = new DataTable();
@@ -179,7 +179,7 @@ namespace Schedule.Windows
             {
                 if (!create)
                 {
-                    DataBase dataBase = new DataBase();
+                    DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                     dataBase.OpenConnection();
                     MySqlCommand command = new MySqlCommand($"UPDATE `teacher_subject` SET `teacher_id` = @tId, `subject_id` = @sId WHERE `teacher_subject_id` = @tsId;", dataBase.GetConnection());
                     command.Parameters.Add("@tId", MySqlDbType.Int32).Value = ReturnIdTeacher(comboBoxTeacher.Text);
@@ -200,7 +200,7 @@ namespace Schedule.Windows
                 }
                 else
                 {
-                    DataBase dataBase = new DataBase();
+                    DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                     DataTable table = new DataTable();
                     MySqlDataAdapter adapter = new MySqlDataAdapter();
                     dataBase.OpenConnection();
