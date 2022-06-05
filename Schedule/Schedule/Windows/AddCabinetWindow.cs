@@ -64,7 +64,7 @@ namespace Schedule.Windows
                     dataBase.CloseConnection();
                     cabinetNumber = cabinet;
 
-                    this.Hide();
+                    //this.Hide();
                     var res = MessageBox.Show("Номер кабинета успешно изменен!");
                     if (res == DialogResult.OK)
                     {
@@ -93,7 +93,7 @@ namespace Schedule.Windows
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
 
-                    this.Hide();
+                    //this.Hide();
                     var res = MessageBox.Show("Кабинет успешно добавлен!");
                     if (res == DialogResult.OK)
                     {

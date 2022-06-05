@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,8 +98,9 @@ namespace Schedule
             cmd.Dispose();
             conn.Close();
 
-            MessageBox.Show("Saved");
-
+            MessageBox.Show("Экзамен успешно добавлен!");
+            buttonAdd.Enabled = false;
+            buttonBack.Enabled = false;
         }
 
         private int ReturnIdFromString(string SQLcommand)
@@ -211,7 +213,7 @@ namespace Schedule
 
         private void ShowSheduleOnDate()
         {
-            lbDate.Text = $"{date.DayOfWeek}, {date.Day} {date.Month} {date.Year}";
+            lbDate.Text = $"{CultureInfo.GetCultureInfo("ru-Ru").DateTimeFormat.GetDayName(date.DayOfWeek)}, {date.Day}.{date.Month}.{date.Year}";
             cbGroup.Text = group_name;
             cbSubject.Text = subject_name;
             SelectAction();

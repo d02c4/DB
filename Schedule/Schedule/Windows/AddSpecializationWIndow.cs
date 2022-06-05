@@ -53,7 +53,7 @@ namespace Schedule.Windows
                 command.ExecuteNonQuery();
                 dataBase.CloseConnection();
 
-                this.Hide();
+                //this.Hide();
                 var res = MessageBox.Show("Специализация успешно изменена!");
                 if (res == DialogResult.OK)
                 {
@@ -71,7 +71,7 @@ namespace Schedule.Windows
                 command.Parameters.AddWithValue("specialization_name", textBoxSpecialization.Text);
                 command.ExecuteNonQuery();
                 dataBase.CloseConnection();
-                this.Hide();
+                //this.Hide();
                 var res = MessageBox.Show("Специализация успешно добавлена!");
                 if (res == DialogResult.OK)
                 {

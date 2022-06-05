@@ -8,16 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Schedule
+namespace Schedule.Windows
 {
-    public partial class Input : Form
+    public partial class HelpWindow : Form
     {
-        public Input()
+        public HelpWindow()
         {
             InitializeComponent();
-
         }
-
-
     }
 }

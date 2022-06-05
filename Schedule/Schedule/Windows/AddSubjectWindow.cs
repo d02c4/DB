@@ -65,7 +65,7 @@ namespace Schedule.Windows
                         command.ExecuteNonQuery();
                         dataBase.CloseConnection();
 
-                        this.Hide();
+                        //this.Hide();
                         var res = MessageBox.Show("Предмет успешно изменен!");
                         if (res == DialogResult.OK)
                         {
@@ -99,7 +99,7 @@ namespace Schedule.Windows
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
 
-                    this.Hide();
+                    //this.Hide();
                     var res = MessageBox.Show("Предмет успешно добавлен!");
                     if (res == DialogResult.OK)
                     {

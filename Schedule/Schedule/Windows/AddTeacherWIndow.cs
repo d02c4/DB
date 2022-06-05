@@ -55,7 +55,7 @@ namespace Schedule.Windows
                 command.ExecuteNonQuery();
                 dataBase.CloseConnection();
 
-                this.Hide();
+                //this.Hide();
                 var res = MessageBox.Show("Данные преподавателя успешно изменены!");
                 if (res == DialogResult.OK)
                 {
@@ -76,7 +76,7 @@ namespace Schedule.Windows
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
 
-                    this.Hide();
+                    //this.Hide();
                     var res = MessageBox.Show("Преподаватель успешно добавлен!");
                     if (res == DialogResult.OK)
                     {

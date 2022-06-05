@@ -62,10 +62,13 @@ namespace Schedule
             {
                 btnAddHoliday.Enabled = false;
                 panelAdminPanel.Hide();
-
+                this.Text = $"Пользователь: {login1}, ограниченный доступ";
             }
             else
+            {
                 btnAddHoliday.Enabled = true;
+                this.Text = $"Пользователь: {login1}, полный доступ";
+            }
             displaDays();
             AddGroupInSelector();
             AddSubjectInSelector();
@@ -109,6 +112,7 @@ namespace Schedule
             {
                 comboBoxSubject.Items.Add(table.Rows[i].Field<string>(0));
                 comboBoxChooseSubject.Items.Add(table.Rows[i].Field<string>(0));
+                comboBoxChooseSubject1.Items.Add(table.Rows[i].Field<string>(0));
             }
         }
 
@@ -178,8 +182,7 @@ namespace Schedule
             DataTable table = ReturnAnswerRequest("SELECT `group_name`, `date_value` FROM `exam` " +
                 "JOIN `group` on `exam`.`group_id` = `group`.`group_id` " +
                 "JOIN `date` on `exam`.`date_id` = `date`.`date_id` " +
-                "WHERE `group_name` = @GN AND " +
-                "`date_value` = @D;", date, groupName, false);
+                "WHERE `group_name` = @GN AND `date_value` = @D;", date, groupName, false);
             if (table.Rows.Count > 0)
                 return true;
             else
@@ -381,8 +384,11 @@ namespace Schedule
 
         private void btnAddHoliday_Click(object sender, EventArgs e)
         {
-            EventForm holiday = new EventForm(this);
+            AdminPanel adminPanel = new AdminPanel(autentification, this);
+            adminPanel.FillAndSelectForKostil();
+            EventForm holiday = new EventForm(this, -1, adminPanel);
             holiday.ShowDialog();
+            Upd();
         }
 
         private void btnprevious_Click(object sender, EventArgs e)
@@ -466,6 +472,34 @@ namespace Schedule
             }
             else
                 MessageBox.Show("Такого предмета нет в списке!");
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (comboBoxChooseSubject1.Items.Contains(comboBoxChooseSubject1.Text))
+            {
+                Windows.ListWhat listWhat = new Windows.ListWhat(comboBoxChooseSubject1.Text);
+                listWhat.ShowDialog();
+            }
+            else
+                MessageBox.Show("Такого предмета нет в списке!");
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            Windows.HelpWindow helpWindow = new HelpWindow();
+            helpWindow.ShowDialog();
+        }
+
+        private void buttonGroupShow_Click(object sender, EventArgs e)
+        {
+            Windows.GroupList groupList = new Windows.GroupList();
+            groupList.ShowDialog();
         }
 
         private void btnnext_Click(object sender, EventArgs e)

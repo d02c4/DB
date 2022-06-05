@@ -1,6 +1,5 @@
-D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\Schedule.exe
-D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\System.Memory.dll
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\Schedule.exe.config
+D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\Schedule.exe
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\Schedule.pdb
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\MySql.Data.dll
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\Google.Protobuf.dll
@@ -8,6 +7,7 @@ D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\ZstdNet.dll
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\K4os.Compression.LZ4.Streams.dll
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\BouncyCastle.Crypto.dll
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\Ubiety.Dns.Core.dll
+D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\System.Memory.dll
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\System.Buffers.dll
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\K4os.Compression.LZ4.dll
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\bin\Debug\K4os.Hash.xxHash.dll
@@ -16,6 +16,7 @@ D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.csproj.Assembly
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.csproj.SuggestedBindingRedirects.cache
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.exe.config
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Forms.DeleteButtonHoliday.resources
+D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Forms.Element.resources
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Forms.NumHoliday.resources
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Forms.UserNotControlHolidayName.resources
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.AddCabinetWindow.resources
@@ -32,10 +33,11 @@ D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Autentification
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.ButtonDelete.resources
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.EventForm.resources
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Form1.resources
-D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Input.resources
-D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.MAIN.resources
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Properties.Resources.resources
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.HolidayOnDate.resources
+D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.ScheduleForGroup.resources
+D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.ScheduleForSubject.resources
+D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.ScheduleForTeacher.resources
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.ScheduleOnDate.resources
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.UserControlBlank.resources
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.UserControlDays.resources
@@ -49,7 +51,7 @@ D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.csproj.CoreComp
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.csproj.CopyComplete
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.exe
 D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.pdb
-D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Forms.Element.resources
-D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.ScheduleForTeacher.resources
-D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.ScheduleForGroup.resources
-D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.ScheduleForSubject.resources
+D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.ListWhat.resources
+D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Forms.TeacherElement.resources
+D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.HelpWindow.resources
+D:\Study\Sharp\Test_work\DB\Schedule\Schedule\obj\Debug\Schedule.Windows.GroupList.resources

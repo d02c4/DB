@@ -1,6 +1,6 @@
 ﻿namespace Schedule.Forms
 {
-    partial class Element
+    partial class TeacherElement
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -39,20 +39,19 @@
             this.label1.Location = new System.Drawing.Point(2, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 41);
-            this.label1.TabIndex = 16;
+            this.label1.Size = new System.Drawing.Size(193, 47);
+            this.label1.TabIndex = 17;
             this.label1.Text = "№";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Element
+            // TeacherElement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Element";
-            this.Size = new System.Drawing.Size(118, 41);
+            this.Name = "TeacherElement";
+            this.Size = new System.Drawing.Size(197, 47);
+            this.Load += new System.EventHandler(this.TeacherElement_Load);
             this.ResumeLayout(false);
 
         }

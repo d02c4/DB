@@ -10,20 +10,18 @@ using System.Windows.Forms;
 
 namespace Schedule.Forms
 {
-    public partial class Element : UserControl
+    public partial class TeacherElement : UserControl
     {
-        public Element()
+        public TeacherElement()
         {
             InitializeComponent();
         }
-
 
         public void SetText(string str)
         {
             label1.Text = str;
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void TeacherElement_Load(object sender, EventArgs e)
         {
 
         }

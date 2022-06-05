@@ -189,7 +189,7 @@ namespace Schedule.Windows
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
                    
-                    this.Hide();
+                    //this.Hide();
                     var res = MessageBox.Show("Предмет преподавателя успешно изменен!");
                     if (res == DialogResult.OK)
                     {
@@ -227,7 +227,7 @@ namespace Schedule.Windows
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
 
-                    this.Hide();
+                    //this.Hide();
                     var res = MessageBox.Show("Предмет специалиста добавлен!");
                     if (res == DialogResult.OK)
                     {

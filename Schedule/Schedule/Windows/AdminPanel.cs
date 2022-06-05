@@ -38,15 +38,13 @@ namespace Schedule
             MySqlCommand cmd = new MySqlCommand("SHOW TABLES;", dataBase.GetConnection());
             adapter.SelectCommand = cmd;
             adapter.Fill(dt);
-
             for(int i = 0; i < dt.Rows.Count; i++)
             {
-                
-                comboBoxTables.Items.Add(dt.Rows[i][0].ToString());
+                if(dt.Rows[i][0].ToString() != "exam")
+                    comboBoxTables.Items.Add(dt.Rows[i][0].ToString());
             }
 
             dataBase.CloseConnection();
-
         }
 
         private void AdminPanel_Load(object sender, EventArgs e)
@@ -176,6 +174,15 @@ namespace Schedule
                     win9 = new Schedule.Windows.AddTimeWindow(-1, this);
                 win9.ShowDialog();
             }
+            else if (comboBoxTables.Text == "holiday")
+            {
+                EventForm win10;
+                if (CheckSelected())
+                    win10 = new EventForm(form1, SelectId(), this);
+                else
+                    win10 = new EventForm(form1, -1, this);
+                win10.ShowDialog();
+            }
         }
 
         int SelectId()
@@ -240,6 +247,11 @@ namespace Schedule
                 Schedule.Windows.AddTimeWindow win9 = new Schedule.Windows.AddTimeWindow(-1, this);
                 win9.ShowDialog();
             }
+            else if (comboBoxTables.Text == "holiday")
+            {
+                EventForm win10 = new EventForm(form1, -1, this);
+                win10.ShowDialog();
+            }
         }
 
         private void panelAutorization_Click(object sender, EventArgs e)
@@ -247,6 +259,13 @@ namespace Schedule
             this.Close();
             Form1 form2 = new Form1(autentification, true, Form1.Login, Form1.Pass);
             form2.Show();
+        }
+
+
+        public void FillAndSelectForKostil()
+        {
+            FillComboBox();
+            comboBoxTables.SelectedItem = comboBoxTables.Items[5];
         }
     }
 }

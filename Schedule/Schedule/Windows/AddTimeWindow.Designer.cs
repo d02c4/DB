@@ -36,7 +36,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(57, 63);
+            this.button1.Location = new System.Drawing.Point(69, 63);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 32);
             this.button1.TabIndex = 10;
@@ -53,6 +53,7 @@
             this.labelCabinet.Size = new System.Drawing.Size(59, 20);
             this.labelCabinet.TabIndex = 9;
             this.labelCabinet.Text = "Время";
+            this.labelCabinet.Click += new System.EventHandler(this.labelCabinet_Click);
             // 
             // dateTimePicker1
             // 
@@ -61,14 +62,14 @@
             this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.dateTimePicker1.Location = new System.Drawing.Point(12, 32);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker1.Size = new System.Drawing.Size(238, 25);
             this.dateTimePicker1.TabIndex = 11;
             // 
             // AddTimeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(236, 103);
+            this.ClientSize = new System.Drawing.Size(262, 103);
             this.ControlBox = false;
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);

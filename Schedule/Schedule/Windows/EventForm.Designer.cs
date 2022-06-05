@@ -37,45 +37,51 @@
             // 
             // tbNameHoliday
             // 
-            this.tbNameHoliday.Location = new System.Drawing.Point(12, 30);
+            this.tbNameHoliday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbNameHoliday.Location = new System.Drawing.Point(9, 24);
+            this.tbNameHoliday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbNameHoliday.Name = "tbNameHoliday";
-            this.tbNameHoliday.Size = new System.Drawing.Size(230, 22);
+            this.tbNameHoliday.Size = new System.Drawing.Size(199, 22);
             this.tbNameHoliday.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(9, 9);
+            this.label4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(7, 7);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 18);
+            this.label4.Size = new System.Drawing.Size(158, 18);
             this.label4.TabIndex = 1;
             this.label4.Text = "Название праздника";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(9, 55);
+            this.label5.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(6, 60);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 18);
+            this.label5.Size = new System.Drawing.Size(42, 16);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Date";
+            this.label5.Text = "Дата";
             // 
             // dtpDateHoliday
             // 
-            this.dtpDateHoliday.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dtpDateHoliday.Location = new System.Drawing.Point(12, 76);
+            this.dtpDateHoliday.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtpDateHoliday.Location = new System.Drawing.Point(8, 78);
+            this.dtpDateHoliday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpDateHoliday.Name = "dtpDateHoliday";
-            this.dtpDateHoliday.Size = new System.Drawing.Size(230, 25);
+            this.dtpDateHoliday.Size = new System.Drawing.Size(200, 22);
             this.dtpDateHoliday.TabIndex = 2;
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSave.Location = new System.Drawing.Point(64, 107);
+            this.btnSave.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSave.Location = new System.Drawing.Point(58, 114);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(126, 29);
+            this.btnSave.Size = new System.Drawing.Size(94, 24);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -83,15 +89,16 @@
             // 
             // EventForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 143);
+            this.ClientSize = new System.Drawing.Size(219, 140);
             this.ControlBox = false;
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dtpDateHoliday);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbNameHoliday);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EventForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Праздник";

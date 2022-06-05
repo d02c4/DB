@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,8 @@ namespace Schedule.Windows
         private void HolidayOnDate_Load(object sender, EventArgs e)
         {
             DateTime dt = new DateTime(year, month, day);
-            lbDate.Text = $"{dt.DayOfWeek}, {dt.Day} {dt.Month} {dt.Year}";
+            
+            lbDate.Text = $"{CultureInfo.GetCultureInfo("ru-Ru").DateTimeFormat.GetDayName(dt.DayOfWeek)}, {dt.Day}.{dt.Month}.{dt.Year}";
             FillTable();
         }
 

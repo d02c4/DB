@@ -22,6 +22,7 @@ namespace Schedule.Windows
         public AddTimeWindow(int timeId, AdminPanel adminPanel)
         {
             this.timeId = timeId;
+            this.adminPanel = adminPanel;
             InitializeComponent();
         }
 
@@ -46,13 +47,13 @@ namespace Schedule.Windows
             {
                 DataBase dataBase = new DataBase(Form1.Login, Form1.Pass);
                 dataBase.OpenConnection();
-                MySqlCommand command = new MySqlCommand($"UPDATE `time` SET `time_value` = @T WHERE `time_id` = @I", dataBase.GetConnection());
+                MySqlCommand command = new MySqlCommand($"UPDATE `time` SET `time_value` = @T WHERE `time_id` = @I;", dataBase.GetConnection());
                 command.Parameters.Add("@T", MySqlDbType.Time).Value = dateTimePicker1.Value.TimeOfDay;
                 command.Parameters.Add("@I", MySqlDbType.Int32).Value = timeId;
                 command.ExecuteNonQuery();
                 dataBase.CloseConnection();
 
-                this.Hide();
+                //this.Hide();
                 var res = MessageBox.Show("Время успешно изменено!");
                 if (res == DialogResult.OK)
                 {
@@ -73,7 +74,7 @@ namespace Schedule.Windows
                 command.ExecuteNonQuery();
                 dataBase.CloseConnection();
 
-                this.Hide();
+                //this.Hide();
                 var res = MessageBox.Show("Время успешно добавлено!");
                 if (res == DialogResult.OK)
                 {
@@ -98,6 +99,11 @@ namespace Schedule.Windows
                 dateTimePicker1.Value = DateTime.Now;
                 button1.Text = "Добавить";
             }
+        }
+
+        private void labelCabinet_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -207,7 +207,7 @@ namespace Schedule.Windows
                         command.ExecuteNonQuery();
                         dataBase.CloseConnection();
 
-                        this.Hide();
+                        //this.Hide();
                         var res = MessageBox.Show("Группа успешно изменена!");
                         if (res == DialogResult.OK)
                         {
@@ -262,7 +262,7 @@ namespace Schedule.Windows
                         command.ExecuteNonQuery();
                         dataBase.CloseConnection();
 
-                        this.Hide();
+                        //this.Hide();
                         var res = MessageBox.Show("Группа успешно добавлена!");
                         if (res == DialogResult.OK)
                         {

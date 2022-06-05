@@ -61,7 +61,7 @@ namespace Schedule.Windows
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
 
-                    this.Hide();
+                    //this.Hide();
                     var res = MessageBox.Show("Номер курса успешно изменен!");
                     if (res == DialogResult.OK)
                     {
@@ -91,7 +91,7 @@ namespace Schedule.Windows
                     command.ExecuteNonQuery();
                     dataBase.CloseConnection();
 
-                    this.Hide();
+                    //this.Hide();
                     var res = MessageBox.Show("Курс успешно добавлен!");
                     if (res == DialogResult.OK)
                     {
